@@ -5,3 +5,5 @@ tags.temp
 yarn
 coc
 configstore
+nvim/bundle/*
+nvim/pack/*
