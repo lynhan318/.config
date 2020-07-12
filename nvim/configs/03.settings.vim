@@ -5,49 +5,40 @@
 let g:typescript_indent_disable = 1
 "}}
 
-"{{ limelight
-" Color name (:help cterm-colors) or ANSI code
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 240
-
-" Color name (:help gui-colors) or RGB color
-let g:limelight_conceal_guifg = 'DarkGray'
-let g:limelight_conceal_guifg = '#777777'
-
-" Default: 0.5
-let g:limelight_default_coefficient = 0.7
-
-" Number of preceding/following paragraphs to include (default: 0)
-let g:limelight_paragraph_span = 1
-
-" Beginning/end of paragraph
-"   When there's no empty line between the paragraphs
-"   and each paragraph starts with indentation
-let g:limelight_bop = '^\s'
-let g:limelight_eop = '\ze\n^\s'
-
-" Highlighting priority (default: 10)
-"   Set it to -1 not to overrule hlsearch
-let g:limelight_priority = -1
-"}}
 
 "{{ Theme
 
-syntax enable
-let g:airline_theme='base16'
-set background=dark termguicolors cursorline
 "colorscheme gruvbox
 "colorschem base16-gruvbox-dark-pale
-colorschem base16-default-dark
-let base16colorspace=256
+"ayu light
+"{
+"let ayucolor="light"
+"set termguicolors
+"colorscheme ayu
+"}
+"
+"dracular{{
+syntax enable
+let g:airline_theme='dracula'
+let g:dracula_colorterm = 0
+set background=dark
+set termguicolors
+colorscheme dracula
+"}}
+" base16
+"{
+"let g:airline_theme='base16'
+"set background=dark termguicolors cursorline
+"colorschem base16-default-dark
+"let base16colorspace=256
 "opacity background
-hi! Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+"hi! Normal ctermbg=NONE guibg=NONE
+"hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+"}
 
 "}}
 
 "airline {{
-let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'

@@ -37,15 +37,15 @@ set nowrap
 set visualbell
 set noerrorbells
 
-augroup CursorLine
-    au!
-    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-    au WinLeave * setlocal nocursorline
-augroup END
-hi CursorLine ctermbg=235
+"augroup CursorLine
+    "au!
+    "au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    "au WinLeave * setlocal nocursorline
+"augroup END
+"hi CursorLine ctermbg=235
 
 "imap
-inoremap jj <ESC>
+inoremap jk <ESC>
 inoremap ww <ESC>:w<cr>
 inoremap <silent> <c-l> <Right>
 inoremap <silent><expr><Tab> pumvisible() ? "\<C-N>" : "\<Tab>"
