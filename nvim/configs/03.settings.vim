@@ -7,9 +7,13 @@ let g:typescript_indent_disable = 1
 
 
 "{{ Theme
-
+syntax enable
+"set background=dark
+set termguicolors
 "colorscheme gruvbox
-"colorschem base16-gruvbox-dark-pale
+"let g:gruvbox_contrast_dark= 'soft'
+"let g:airline_theme='base16-gruvbox-dark-hard'
+
 "ayu light
 "{
 "let ayucolor="light"
@@ -18,11 +22,8 @@ let g:typescript_indent_disable = 1
 "}
 "
 "dracular{{
-syntax enable
 let g:airline_theme='dracula'
 let g:dracula_colorterm = 0
-set background=dark
-set termguicolors
 colorscheme dracula
 "}}
 " base16
@@ -41,9 +42,10 @@ colorscheme dracula
 "airline {{
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#buffer_nr_show = 1
+
 "}}
 
 "DEOPLETE {{
@@ -133,12 +135,4 @@ let g:Lf_IgnoreCurrentBufferName = 1
 
 "ctrslf {{
 let g:ctrlsf_default_view_mode = 'compact'
-"}}
-
-"indentLine {{
-let g:indent_guides_enable_on_vim_startup = 1
-set ts=4 sw=4 et
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
-
 "}}

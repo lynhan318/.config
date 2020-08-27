@@ -4,7 +4,6 @@ Plug 'chriskempson/base16-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'ayu-theme/ayu-vim'
-Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'Shougo/deoplete.nvim'
 "Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 "Plug 'ludovicchabant/vim-gutentags'
