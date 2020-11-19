@@ -1,4 +1,4 @@
-![IDE Neovim with NextLink](https://codefun.dev/uploads/post-image-1562497234456.png "IDE NeoVim with NextLint")
+![IDE Neovim with NextLink](https://cdn.nextlint.com/post/faf12e74-a4c8-48ef-a2f1-2c5cc7691344/f9AEnC-Ganvu-AMKkD.gif "IDE NeoVim with NextLint")
 # IDE Neovim With NextLint
 1. Power of Neovim: https://nextlint.com/@lythanhnhan27294/tu-visual-studio-code-den-neovim-c7f10c8f
 2. Use Neovim for text editor first: https://nextlint.com/@lythanhnhan27294/huong-dan-cai-dat-va-su-dung-neovim-co-ban-e873e7b5
