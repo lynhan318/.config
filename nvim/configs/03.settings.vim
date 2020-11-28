@@ -8,8 +8,9 @@ let g:typescript_indent_disable = 1
 
 "{{ Theme
 syntax enable
-"set background=dark
+set background=dark
 set termguicolors
+set cursorline
 "colorscheme gruvbox
 "let g:gruvbox_contrast_dark= 'soft'
 "let g:airline_theme='base16-gruvbox-dark-hard'
@@ -22,19 +23,20 @@ set termguicolors
 "}
 "
 "dracular{{
-let g:airline_theme='dracula'
-let g:dracula_colorterm = 0
-colorscheme dracula
+"let g:airline_theme='dracula'
+"let g:dracula_colorterm = 0
+"colorscheme dracula
 "}}
 " base16
 "{
-"let g:airline_theme='base16'
-"set background=dark termguicolors cursorline
-"colorschem base16-default-dark
 "let base16colorspace=256
-"opacity background
-"hi! Normal ctermbg=NONE guibg=NONE
-"hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+colorscheme base16-ocean
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+hi! LineNr  ctermfg=8 ctermbg=NONE guifg=#65737e guibg=NONE
+
+let g:airline_theme='base16'
+
 "}
 
 "}}
@@ -88,6 +90,7 @@ let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'javascriptreact': ['eslint'],
 \   'python': ['pylint'],
+\   'rust':['analyzer'],
 \}
 
 let g:ale_fixers = {
@@ -96,7 +99,8 @@ let g:ale_fixers = {
 \   'javascript': ['prettier','eslint'],
 \   'javascriptreact': ['prettier','eslint'],
 \   'typescript': ['prettier','tslint'],
-\   'typescriptreact': ['prettier','tslint']
+\   'typescriptreact': ['prettier','tslint'],
+\   'rust': ['prettier','rustfmt'],
 \}
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
@@ -135,4 +139,10 @@ let g:Lf_IgnoreCurrentBufferName = 1
 
 "ctrslf {{
 let g:ctrlsf_default_view_mode = 'compact'
+"}}
+"rust.vim{{
+let g:rustfmt_autosave = 1
+let g:rust_clip_command = 'pbcopy'
+let g:racer_cmd = "/Users/lap00822/Desktop/rust/racer/target/release/racer"
+let g:racer_experimental_completer = 1
 "}}

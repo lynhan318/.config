@@ -23,7 +23,6 @@ endfunction
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 nmap <silent> gd <Plug>(coc-definition)
-
 hi! CocErrorSign guifg=#d97084
 hi! CocWarningSign guifg=#e9cb87
 hi! CocInfoSign guifg=#d0d2d2

@@ -1,4 +1,7 @@
 call plug#begin('~/.config/nvim/bundle')
+Plug 'neovim/nvim-lspconfig'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'chriskempson/base16-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -24,7 +27,7 @@ Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'galooshi/vim-import-js'
 Plug 'sheerun/vim-polyglot'
 "snippets

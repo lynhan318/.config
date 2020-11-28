@@ -8,10 +8,11 @@ font:
   italic:
     family: "FuraCode Nerd Font"
     style: Italic
-  size: 13.0
+  size: 15.0
   offset:
     x: 0
-    y: 1
+    y: 0
+
   glyph_offset:
     x: 0
     y: 0
@@ -20,7 +21,6 @@ font:
 background_opacity: 1.0
 
 # When true, bold text is drawn using the bright variant of colors.
-draw_bold_text_with_bright_colors: false
 
 selection:
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
@@ -77,71 +77,39 @@ window:
 colors:
   # Default colors
   primary:
-    background: "0x282a36"
-    foreground: "0xf8f8f2"
+    background: "0x2b303b"
+    foreground: "0xc0c5ce"
 
-    # Bright and dim foreground colors
-    #
-    # The dimmed foreground color is calculated automatically if it is not present.
-    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
-    # is `false`, the normal foreground color will be used.
-    #dim_foreground: '0x9a9a9a'
-    #bright_foreground: '0xffffff'
-
-  # Cursor colors
-  #
-  # Colors which should be used to draw the terminal cursor. If these are unset,
-  # the cursor color will be the inverse of the cell color.
+  # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: "0x44475a"
-    cursor: "0xf8f8f2"
+    text: "0x2b303b"
+    cursor: "0xc0c5ce"
 
   # Normal colors
   normal:
-    black: "0x000000"
-    red: "0xff5555"
-    green: "0x50fa7b"
-    yellow: "0xf1fa8c"
-    blue: "0xbd93f9"
-    magenta: "0xff79c6"
-    cyan: "0x8be9fd"
-    white: "0xbfbfbf"
+    black: "0x2b303b"
+    red: "0xbf616a"
+    green: "0xa3be8c"
+    yellow: "0xebcb8b"
+    blue: "0x8fa1b3"
+    magenta: "0xb48ead"
+    cyan: "0x96b5b4"
+    white: "0xc0c5ce"
 
   # Bright colors
   bright:
-    black: "0x4d4d4d"
-    red: "0xff6e67"
-    green: "0x5af78e"
-    yellow: "0xf4f99d"
-    blue: "0xcaa9fa"
-    magenta: "0xff92d0"
-    cyan: "0x9aedfe"
-    white: "0xe6e6e6"
+    black: "0x65737e"
+    red: "0xd08770"
+    green: "0x343d46"
+    yellow: "0x4f5b66"
+    blue: "0xa7adba"
+    magenta: "0xdfe1e8"
+    cyan: "0xab7967"
+    white: "0xeff1f5"
 
-  # Dim colors
-  #
-  # If the dim colors are not set, they will be calculated automatically based
-  # on the `normal` colors.
-  dim:
-    black: "0x14151b"
-    red: "0xff2222"
-    green: "0x1ef956"
-    yellow: "0xebf85b"
-    blue: "0x4d5b86"
-    magenta: "0xff46b0"
-    cyan: "0x59dffc"
-    white: "0xe6e6d1"
-
-  # Indexed Colors
-  #
-  # The indexed colors include all colors from 16 to 256.
-  # When these are not set, they're filled with sensible defaults.
-  #
-  # Example:
-  #   `- { index: 16, color: '0xff00ff' }`
-  #
   indexed_colors: []
 
+draw_bold_text_with_bright_colors: false
 #shell:
 #  program: /usr/local/bin/tmux
 #  args:

@@ -45,12 +45,12 @@ set noerrorbells
 "hi CursorLine ctermbg=235
 
 "imap
-inoremap jk <ESC>
-inoremap ww <ESC>:w<cr>
 inoremap <silent> <c-l> <Right>
 inoremap <silent><expr><Tab> pumvisible() ? "\<C-N>" : "\<Tab>"
 inoremap <silent><expr><S-Tab> pumvisible() ? "\<C-P>" : "\<S-Tab>"
 "nmap
+inoremap jk <ESC>
+inoremap ww <ESC>:w<cr>
 nnoremap ; :
 nnoremap <Esc><Esc> :nohlsearch<CR>
 nnoremap S :%s//g<Left><Left>
@@ -73,6 +73,7 @@ vnoremap > >gv
 vnoremap <silent> y y:call ClipboardYank()<cr>
 vnoremap <silent> d d:call ClipboardYank()<cr>
 nnoremap <silent> p :call ClipboardPaste()<cr>p
+autocmd FileType html.handlebars let b:ale_javascript_prettier_options = '--parser=glimmer'
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 "ctrslf
 vmap <leader>sw <Plug>CtrlSFVwordPath
