@@ -74,12 +74,12 @@ vnoremap > >gv
 vnoremap <silent> y y:call ClipboardYank()<cr>
 vnoremap <silent> d d:call ClipboardYank()<cr>
 nnoremap <silent> p :call ClipboardPaste()<cr>p
-autocmd FileType html.handlebars let b:ale_javascript_prettier_options = '--parser=glimmer'
+
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 "ctrslf
 vmap <leader>sw <Plug>CtrlSFVwordPath
 "terminal mapping
 tnoremap <Esc> <C-\><C-n>
 "vim-styled syntax
-autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+"autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+"autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
