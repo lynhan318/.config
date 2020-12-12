@@ -81,33 +81,37 @@ let g:user_emmet_leader_key='<C-Z>'
 let g:jsx_pragma_required = 1
 
 "ALE {{
-let g:ale_typescript_tslint_config_path = ''
-let g:ale_typescript_tslint_executable = 'tslint'
-let g:ale_completion_tsserver_autoimport = 1
-let g:ale_typescript_tslint_use_global = 0
-let g:jsx_ext_required = 1
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'javascriptreact': ['eslint'],
-\   'python': ['pylint'],
-\   'rust':['analyzer'],
-\}
+"let g:ale_typescript_tslint_config_path = ''
+"let g:ale_typescript_tslint_executable = 'tslint'
+"let g:ale_completion_tsserver_autoimport = 1
+"let g:ale_typescript_tslint_use_global = 0
+"let g:jsx_ext_required = 1
+"let g:ale_linters = {
+"\   'javascript': ['eslint'],
+"\   'jsx': ['javascript','css'],
+"\   'python': ['pylint'],
+"\   'rust':['analyzer'],
+"\}
 
-let g:ale_fixers = {
-\   '*': ['prettier','remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['black'],
-\   'javascript': ['prettier','eslint'],
-\   'javascriptreact': ['prettier','eslint'],
-\   'typescript': ['prettier','tslint'],
-\   'typescriptreact': ['prettier','tslint'],
-\   'rust': ['prettier','rustfmt'],
-\}
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_fix_on_save = 1
-let g:ale_linters_explicit = 1
+"let g:ale_fixers = {
+"\   '*': ['prettier','remove_trailing_lines', 'trim_whitespace'],
+"\   'python': ['black'],
+"\   'javascript': ['prettier','eslint'],
+"\   'javascriptreact': ['prettier','eslint'],
+"\   'typescript': ['prettier','tslint'],
+"\   'typescriptreact': ['prettier','tslint'],
+"\   'rust': ['prettier','rustfmt'],
+"\}
+"let g:ale_sign_error = '✘'
+"let g:ale_sign_warning = '⚠'
+"let g:ale_lint_on_enter = 0
+"let g:ale_lint_on_text_changed = 'never'
+"let g:ale_fix_on_save = 1
+"let g:ale_linters_explicit = 1
+"augroup FiletypeGroup
+    "autocmd!
+    "au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+"augroup END
 
 "}}
 
@@ -145,4 +149,8 @@ let g:rustfmt_autosave = 1
 let g:rust_clip_command = 'pbcopy'
 let g:racer_cmd = "/Users/lap00822/Desktop/rust/racer/target/release/racer"
 let g:racer_experimental_completer = 1
+"}}
+" treesiter{{
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 "}}

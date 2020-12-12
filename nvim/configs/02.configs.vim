@@ -4,6 +4,7 @@ set expandtab
 set list
 filetype plugin on
 filetype plugin indent on
+set nocompatible
 
 syntax on
 set encoding=UTF-8
@@ -80,5 +81,5 @@ vmap <leader>sw <Plug>CtrlSFVwordPath
 "terminal mapping
 tnoremap <Esc> <C-\><C-n>
 "vim-styled syntax
-"autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-"autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
