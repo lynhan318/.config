@@ -151,6 +151,8 @@ let g:racer_cmd = "/Users/lap00822/Desktop/rust/racer/target/release/racer"
 let g:racer_experimental_completer = 1
 "}}
 " treesiter{{
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
+
+"}}
+"context{{
+let g:context_enabled = 1
 "}}

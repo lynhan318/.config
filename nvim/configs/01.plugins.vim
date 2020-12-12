@@ -1,6 +1,9 @@
 call plug#begin('~/.config/nvim/bundle')
 "nvim treesitter
+Plug 'mfussenegger/nvim-dap'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'romgrk/nvim-treesitter-context'
+Plug 'theHamsta/nvim-dap-virtual-text'
 
 Plug 'voldikss/vim-floaterm'
 Plug 'qpkorr/vim-bufkill'
