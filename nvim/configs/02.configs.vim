@@ -21,11 +21,15 @@ set hlsearch
 "autocmd! CursorHold,CursorHoldI * let @/='\<'.expand('<cword>').'\>'
 
 "}}
-
+set splitbelow
+set splitright
 set number
 set relativenumber
 set ignorecase
 set smartcase
+set smartindent
+set autoindent
+set cursorline
 
 set tabstop=4
 set softtabstop=0

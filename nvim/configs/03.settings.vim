@@ -120,21 +120,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 let g:EasyMotion_smartcase = 1
 " }}
 
-"leaderF {{
-let g:Lf_ShortcutF = '<C-P>'
-
-let g:Lf_WindowPosition = 'popup'
-let g:Lf_PreviewInPopup = 1
-let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu Sans Mono for Powerline" }
-let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
-
-let g:Lf_HideHelp = 1
-let g:Lf_UseCache = 0
-let g:Lf_UseVersionControlTool = 0
-let g:Lf_IgnoreCurrentBufferName = 1
-
-"}}
-
 "ctrslf {{
 let g:ctrlsf_default_view_mode = 'compact'
 "}}
@@ -150,5 +135,6 @@ let g:context_enabled = 1
 "}}
 "fzf{{
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
-map <silent> <C-P> :GFiles <CR>
+"map <silent> <C-P> :Files <CR>
+silent! nmap <C-P> :Files<CR>
 "}}

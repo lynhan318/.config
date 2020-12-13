@@ -119,7 +119,6 @@ function! s:defx_mappings() abort
   nnoremap <silent><buffer><expr> r defx#do_action('rename')
   nnoremap <silent><buffer><expr> R defx#do_action('redraw')
   nnoremap <silent><buffer><expr> n defx#do_action('new_multiple_files')
-  nnoremap <silent><buffer><expr> <Tab> <SID>defx_toggle_zoom()
   nnoremap <silent><buffer><expr> x defx#do_action('execute_system')
 
   if exists('$TMUX')
