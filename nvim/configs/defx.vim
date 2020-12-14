@@ -14,12 +14,12 @@ function s:defx_toggle_tree() abort
   if defx#is_directory()
     return defx#do_action('open_or_close_tree')
   endif
-  return defx#do_action('multi',['drop'])
+  return defx#do_action('multi',['drop','quit'])
 endfunction
 
 function! s:setup_defx() abort
   silent! call defx#custom#option('_', {
-      \ 'winwidth': 35,
+      \ 'winwidth': 40,
       \ 'split': 'vertical',
       \ 'direction': 'topleft',
       \ 'show_ignored_files': 0,
@@ -27,6 +27,7 @@ function! s:setup_defx() abort
       \ 'toggle': 1,
       \ 'columns': 'git:indent:icon:icons:filename',
       \ 'resume': 1,
+      \ 'floating_preview': 1,
       \ })
  silent! call defx#custom#column('icon', {
       \ 'directory_icon': '▸',
@@ -114,16 +115,13 @@ function! s:defx_mappings() abort
   nnoremap <silent><buffer><expr> q defx#do_action('quit')
   nnoremap <silent><buffer><expr> m defx#do_action('move')
   nnoremap <silent><buffer><expr> p defx#do_action('paste')
-  nnoremap <silent><buffer><expr> s defx#do_action('multi',[['drop','vsplit']])
-  nnoremap <silent><buffer><expr> i defx#do_action('multi',[['drop','split']])
+  nnoremap <silent><buffer><expr> s defx#do_action('multi',[['drop','vsplit'],'quit'])
+  nnoremap <silent><buffer><expr> i defx#do_action('multi',[['drop','split'],'quit'])
   nnoremap <silent><buffer><expr> r defx#do_action('rename')
   nnoremap <silent><buffer><expr> R defx#do_action('redraw')
   nnoremap <silent><buffer><expr> n defx#do_action('new_multiple_files')
   nnoremap <silent><buffer><expr> x defx#do_action('execute_system')
 
-  if exists('$TMUX')
-      nnoremap <silent><buffer><expr> gl  defx#async_action('call', '<SID>explorer')
-  endif
   "nnoremap <silent><buffer><expr> E defx#do_action('open', 'vsplit')
   "nnoremap <silent><buffer><expr> P defx#do_action('open', 'pedit')
   "nnoremap <silent><buffer><expr> o defx#do_action('open_or_close_tree')

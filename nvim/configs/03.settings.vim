@@ -134,7 +134,21 @@ let g:racer_experimental_completer = 1
 let g:context_enabled = 1
 "}}
 "fzf{{
+" An action can be a reference to a function that processes selected lines
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
-"map <silent> <C-P> :Files <CR>
+let g:fzf_layout = { 'down': '50%' }
+let g:fzf_buffers_jump = 1
 silent! nmap <C-P> :Files<CR>
+
 "}}

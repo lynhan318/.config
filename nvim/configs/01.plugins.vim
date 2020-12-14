@@ -1,8 +1,6 @@
 call plug#begin('~/.config/nvim/bundle')
 "nvim treesitter
-Plug 'mfussenegger/nvim-dap'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'theHamsta/nvim-dap-virtual-text'
 
 Plug 'voldikss/vim-floaterm'
 Plug 'qpkorr/vim-bufkill'
@@ -26,7 +24,6 @@ Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'sheerun/vim-polyglot'
 "snippets
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
