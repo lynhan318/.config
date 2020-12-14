@@ -4,6 +4,7 @@ set expandtab
 set list
 filetype plugin on
 filetype plugin indent on
+set nocompatible
 
 syntax on
 set encoding=UTF-8
@@ -20,11 +21,15 @@ set hlsearch
 "autocmd! CursorHold,CursorHoldI * let @/='\<'.expand('<cword>').'\>'
 
 "}}
-
+set splitbelow
+set splitright
 set number
 set relativenumber
 set ignorecase
 set smartcase
+set smartindent
+set autoindent
+set cursorline
 
 set tabstop=4
 set softtabstop=0
@@ -73,7 +78,7 @@ vnoremap > >gv
 vnoremap <silent> y y:call ClipboardYank()<cr>
 vnoremap <silent> d d:call ClipboardYank()<cr>
 nnoremap <silent> p :call ClipboardPaste()<cr>p
-autocmd FileType html.handlebars let b:ale_javascript_prettier_options = '--parser=glimmer'
+
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 "ctrslf
 vmap <leader>sw <Plug>CtrlSFVwordPath

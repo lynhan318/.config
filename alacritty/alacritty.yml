@@ -1,17 +1,17 @@
 font:
   normal:
-    family: "FuraCode Nerd Font"
-    style: Retina
+    family: "FuraMono Nerd Font"
+    style: Regular
   bold:
-    family: "FuraCode Nerd Font"
+    family: "FuraMono Nerd Font"
     style: Regular
   italic:
-    family: "FuraCode Nerd Font"
+    family: "FuraMono Nerd Font"
     style: Italic
-  size: 15.0
+  size: 14.0
   offset:
     x: 0
-    y: 0
+    y: 1
 
   glyph_offset:
     x: 0
@@ -71,7 +71,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: SimpleFullscreen
+  startup_mode: Windowed
 
   # Colors (base16)
 colors:

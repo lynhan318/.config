@@ -86,12 +86,6 @@ let g:ale_typescript_tslint_executable = 'tslint'
 let g:ale_completion_tsserver_autoimport = 1
 let g:ale_typescript_tslint_use_global = 0
 let g:jsx_ext_required = 1
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'javascriptreact': ['eslint'],
-\   'python': ['pylint'],
-\   'rust':['analyzer'],
-\}
 
 let g:ale_fixers = {
 \   '*': ['prettier','remove_trailing_lines', 'trim_whitespace'],
@@ -108,6 +102,10 @@ let g:ale_lint_on_enter = 0
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_fix_on_save = 1
 let g:ale_linters_explicit = 1
+augroup FiletypeGroup
+    autocmd!
+    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
 
 "}}
 
@@ -122,21 +120,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 let g:EasyMotion_smartcase = 1
 " }}
 
-"leaderF {{
-let g:Lf_ShortcutF = '<C-P>'
-
-let g:Lf_WindowPosition = 'popup'
-let g:Lf_PreviewInPopup = 1
-let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu Sans Mono for Powerline" }
-let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
-
-let g:Lf_HideHelp = 1
-let g:Lf_UseCache = 0
-let g:Lf_UseVersionControlTool = 0
-let g:Lf_IgnoreCurrentBufferName = 1
-
-"}}
-
 "ctrslf {{
 let g:ctrlsf_default_view_mode = 'compact'
 "}}
@@ -145,4 +128,27 @@ let g:rustfmt_autosave = 1
 let g:rust_clip_command = 'pbcopy'
 let g:racer_cmd = "/Users/lap00822/Desktop/rust/racer/target/release/racer"
 let g:racer_experimental_completer = 1
+"}}
+
+"context{{
+let g:context_enabled = 1
+"}}
+"fzf{{
+" An action can be a reference to a function that processes selected lines
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+let g:fzf_layout = { 'down': '50%' }
+let g:fzf_buffers_jump = 1
+silent! nmap <C-P> :Files<CR>
+
 "}}
