@@ -131,7 +131,7 @@ let g:racer_experimental_completer = 1
 "}}
 
 "context{{
-let g:context_enabled = 1
+"let g:context_enabled = 1
 "}}
 "fzf{{
 " An action can be a reference to a function that processes selected lines
