@@ -19,7 +19,7 @@ endfunction
 
 function! s:setup_defx() abort
   silent! call defx#custom#option('_', {
-      \ 'winwidth': 40,
+      \ 'winwidth': 70,
       \ 'split': 'vertical',
       \ 'direction': 'topleft',
       \ 'show_ignored_files': 0,

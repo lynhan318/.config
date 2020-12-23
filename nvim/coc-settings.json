@@ -1,1 +1,17 @@
-{}
+{
+  "languageserver": {
+    "rome-lsp": {
+      "command": "rome",
+      "args": ["lsp"],
+      "filetypes": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "json"
+      ],
+      "rootPatterns": [".config"],
+      "requireRootPattern": true
+    }
+  }
+}
