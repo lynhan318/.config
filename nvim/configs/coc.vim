@@ -9,6 +9,9 @@ let g:coc_global_extensions = [
       \ 'coc-vimlsp',
       \ 'coc-emmet',
       \ 'coc-tag',
+      \ 'coc-prettier',
+      \ 'coc-eslint',
+      \ 'coc-tslint,'
       \ ]
 
 function! s:show_documentation()

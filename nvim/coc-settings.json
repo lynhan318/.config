@@ -13,5 +13,21 @@
       "rootPatterns": [".config"],
       "requireRootPattern": true
     }
-  }
+  },
+  "eslint.autoFixOnSave":true,
+  "javascript.suggest.autoImports":true,
+  "prettier.trailingComma":"all",
+  "prettier.jsxBracketSameLine":true,
+  "prettier.disableSuccessMessage":true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "Markdown",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "tslint.jsEnable":true,
+  "tslint.autoFixOnSave": true
 }
