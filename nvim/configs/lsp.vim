@@ -1,7 +1,6 @@
 "https://sharksforarms.dev/posts/neovim-rust/
 set completeopt=menuone,noinsert,noselect
 set shortmess+=c
-
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
@@ -17,7 +16,7 @@ inoremap <silent><expr> <CR>      compe#confirm('<CR>')
 inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 set signcolumn=yes
 autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
-nnoremap <silent> n[ <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+"nnoremap <silent> n[ <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> g] <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <silent> ga <cmd>lua vim.lsp.buf.code_action()<CR>
 

@@ -1,8 +1,18 @@
 --https://sharksforarms.dev/posts/neovim-rust/
 -- nvim_lsp object
 local nvim_lsp = require'lspconfig'
+
+local on_attach = function(client)
+    require'completion'.on_attach(client);
+end
+
 nvim_lsp.vimls.setup{}
-nvim_lsp.tsserver.setup{}
+nvim_lsp.tsserver.setup({
+    on_attach = on_attach,
+})
+nvim_lsp.rust_analyzer.setup({
+    on_attach = on_attach,
+})
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained",
   highlight = {
@@ -18,13 +28,8 @@ require'nvim-treesitter.configs'.setup {
 }
 
 
--- function to attach completion when setting up lsp
-local on_attach = function(client)
-    require'completion'.on_attach(client)
-end
+-- Some arbitrary servers
 
--- Enable rust_analyzer
-nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
 
 require'compe'.setup {
   enabled = true;
@@ -51,6 +56,7 @@ require'compe'.setup {
     snippets_nvim = true;
   };
 }
+
 -- Enable diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {

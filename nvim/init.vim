@@ -13,4 +13,3 @@ source $HOME/.config/nvim/configs/functions.vim
 
 luafile $HOME/.config/nvim/configs/lsp.lua
 
-

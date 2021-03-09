@@ -24,8 +24,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'vim-airline/vim-airline',{'commit':'c7a633ce8f4547e680377efe8ea70493fcce1349'}
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline',{'commit':'c7a633ce8f4547e680377efe8ea70493fcce1349'}
+"Plug 'vim-airline/vim-airline-themes'
 "fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -37,6 +37,8 @@ Plug 'dense-analysis/ale'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'nvim-lua/completion-nvim'
+Plug 'nvim-lua/lsp-status.nvim'
 Plug 'hrsh7th/nvim-compe'
+Plug 'psliwka/vim-smoothie'
 
 call plug#end()
