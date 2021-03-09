@@ -11,5 +11,6 @@ source $HOME/.config/nvim/configs/defx.vim
 source $HOME/.config/nvim/configs/floaterm.vim
 source $HOME/.config/nvim/configs/functions.vim
 
+luafile $HOME/.config/nvim/lua/status.lua
 luafile $HOME/.config/nvim/lua/lsp.lua
 

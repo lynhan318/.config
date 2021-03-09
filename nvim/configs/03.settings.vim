@@ -153,3 +153,4 @@ let g:indentLine_enabled = 0
 "}}
 
 nmap <F8> :TagbarToggle<CR>
+

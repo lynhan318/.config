@@ -40,5 +40,6 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/lsp-status.nvim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'psliwka/vim-smoothie'
+Plug 'hoob3rt/lualine.nvim'
 
 call plug#end()
