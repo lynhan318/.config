@@ -63,8 +63,7 @@ noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 noremap Y y$
 nmap <silent> ff <Plug>(easymotion-overwin-f2)
-nmap <silent> fl <Plug>(easymotion-overwin-line)
-nmap <leader>s <Plug>CtrlSFPrompt
+"nmap <silent> fl <Plug>(easymotion-overwin-line)
 
 noremap <silent> <c-k> :wincmd k<CR>
 noremap <silent> <c-j> :wincmd j<CR>
@@ -80,10 +79,10 @@ vnoremap <silent> d d:call ClipboardYank()<cr>
 nnoremap <silent> p :call ClipboardPaste()<cr>p
 
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-"ctrslf
-vmap <leader>sw <Plug>CtrlSFVwordPath
 "terminal mapping
 tnoremap <Esc> <C-\><C-n>
+autocmd BufNewFile,BufRead *.txml set filetype=xml
+autocmd BufNewFile,BufRead *.tcss set filetype=css
 "vim-styled syntax
 "autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 "autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear

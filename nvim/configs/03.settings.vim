@@ -35,19 +35,18 @@ hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 hi! LineNr  ctermfg=8 ctermbg=NONE guifg=#65737e guibg=NONE
 
-let g:airline_theme='base16'
 
 "}
 
 "}}
 
 "airline {{
+let g:airline_theme='base16'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#buffer_nr_show = 1
-
 "}}
 
 "DEOPLETE {{
@@ -123,12 +122,6 @@ let g:EasyMotion_smartcase = 1
 "ctrslf {{
 let g:ctrlsf_default_view_mode = 'compact'
 "}}
-"rust.vim{{
-let g:rustfmt_autosave = 1
-let g:rust_clip_command = 'pbcopy'
-let g:racer_cmd = "/Users/lap00822/Desktop/rust/racer/target/release/racer"
-let g:racer_experimental_completer = 1
-"}}
 
 "context{{
 "let g:context_enabled = 1
@@ -152,3 +145,11 @@ let g:fzf_buffers_jump = 1
 silent! nmap <C-P> :Files<CR>
 
 "}}
+
+"indentline{{
+let g:indentLine_setColors = 0
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_enabled = 0
+"}}
+
+nmap <F8> :TagbarToggle<CR>

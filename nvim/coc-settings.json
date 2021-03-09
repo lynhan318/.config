@@ -1,33 +1,23 @@
 {
-  "languageserver": {
-    "rome-lsp": {
-      "command": "rome",
-      "args": ["lsp"],
-      "filetypes": [
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-        "json"
-      ],
-      "rootPatterns": [".config"],
-      "requireRootPattern": true
-    }
-  },
-  "eslint.autoFixOnSave":true,
-  "javascript.suggest.autoImports":true,
-  "prettier.trailingComma":"all",
-  "prettier.jsxBracketSameLine":true,
-  "prettier.disableSuccessMessage":true,
+  "javascript.suggest.autoImports": true,
+  "prettier.trailingComma": "all",
+  "prettier.jsxBracketSameLine": true,
+  "prettier.disableSuccessMessage": true,
+  "prettier.printWidth": 140,
+  "rust-analyzer.inlayHints.enable": true,
+  "rust-analyzer.diagnostics.disabled": ["macro-error"],
   "coc.preferences.formatOnSaveFiletypes": [
+    "json",
+    "txml",
     "css",
     "markdown",
+    "html",
+    "yaml",
+    "yml",
     "Markdown",
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact"
-  ],
-  "tslint.jsEnable":true,
-  "tslint.autoFixOnSave": true
+  ]
 }

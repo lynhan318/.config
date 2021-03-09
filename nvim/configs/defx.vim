@@ -19,7 +19,7 @@ endfunction
 
 function! s:setup_defx() abort
   silent! call defx#custom#option('_', {
-      \ 'winwidth': 70,
+      \ 'winwidth': 40,
       \ 'split': 'vertical',
       \ 'direction': 'topleft',
       \ 'show_ignored_files': 0,
@@ -82,7 +82,7 @@ function! s:defx_open(...) abort
     let l:path = l:opts.dir
   endif
 
-  let l:args = '-winwidth=40 -direction=topleft -split=vertical'
+  let l:args = '-winwidth=70 -direction=topleft -split=vertical'
 
   if has_key(l:opts, 'find_current_file')
     call execute(printf('Defx %s -search=%s %s', l:args, expand('%:p'), l:path))
