@@ -1,9 +1,7 @@
 call plug#begin('~/.config/nvim/bundle')
 "nvim treesitter
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
-Plug 'Yggdroot/indentLine'
 Plug 'majutsushi/tagbar'
 
 Plug 'voldikss/vim-floaterm'
@@ -34,6 +32,7 @@ Plug 'dense-analysis/ale'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "neovim lspconfig
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'nvim-lua/completion-nvim'
@@ -41,5 +40,9 @@ Plug 'nvim-lua/lsp-status.nvim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'psliwka/vim-smoothie'
 Plug 'hoob3rt/lualine.nvim'
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 call plug#end()

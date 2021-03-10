@@ -40,14 +40,6 @@ hi! LineNr  ctermfg=8 ctermbg=NONE guifg=#65737e guibg=NONE
 
 "}}
 
-"airline {{
-let g:airline_theme='base16'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#tabline#buffer_nr_show = 1
-"}}
 
 "DEOPLETE {{
 let g:python3_host_prog= '/usr/local/opt/python@3.8/bin/python3'
@@ -86,26 +78,14 @@ let g:ale_completion_tsserver_autoimport = 1
 let g:ale_typescript_tslint_use_global = 0
 let g:jsx_ext_required = 1
 
-"let g:ale_fixers = {
-"\   '*': ['prettier','remove_trailing_lines', 'trim_whitespace'],
-"\   'python': ['black'],
-"\   'javascript': ['prettier','eslint'],
-"\   'javascriptreact': ['prettier','eslint'],
-"\   'typescript': ['prettier','tslint'],
-"\   'typescriptreact': ['prettier','tslint'],
-"\   'rust': ['prettier','rustfmt'],
-"\}
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_text_changed = 'never'
-"let g:ale_fix_on_save = 1
-let g:ale_linters_explicit = 1
-augroup FiletypeGroup
-    autocmd!
-    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-augroup END
-
+let g:ale_fixers = {
+\   '*': ['prettier','remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier','eslint'],
+\   'javascriptreact': ['prettier','eslint'],
+\   'typescript': ['prettier','tslint'],
+\   'typescriptreact': ['prettier','tslint'],
+\}
+let g:ale_fix_on_save = 1
 "}}
 
 "UltiSnips {{
@@ -154,3 +134,6 @@ let g:indentLine_enabled = 0
 
 nmap <F8> :TagbarToggle<CR>
 
+"prettier{{
+
+"}}

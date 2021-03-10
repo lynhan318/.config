@@ -9,7 +9,7 @@ set nocompatible
 syntax on
 set encoding=UTF-8
 set mouse=a
-set scroll=10
+set scroll=15
 
 set history=1000
 set undolevels=1000

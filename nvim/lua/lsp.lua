@@ -1,35 +1,47 @@
 --https://sharksforarms.dev/posts/neovim-rust/
 -- nvim_lsp object
-local nvim_lsp = require'lspconfig'
+local lsp = require'lspconfig'
 
 local on_attach = function(client)
     require'completion'.on_attach(client)
 end
 
-nvim_lsp.vimls.setup{}
-nvim_lsp.tsserver.setup({
-    on_attach = on_attach,
-})
-nvim_lsp.rust_analyzer.setup({
-    on_attach = on_attach,
-})
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
-  highlight = {
-    enable = true,
-  },
-  indent = {
-    enable = true
-  },
-  rainbow = {
-    enable = true,
-    disable = {'bash'}
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+  vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics,
+  {
+    underline = true,
+    virtual_text = true,
+    update_in_insert = false,
+    signs = {
+      priority = 20
+    }
   }
+)
+
+lsp.vimls.setup{
+    on_attach= on_attach
+}
+lsp.tsserver.setup {
+    on_attach = on_attach,
+}
+lsp.rust_analyzer.setup {
+    on_attach = on_attach,
+}
+-- https://github.com/iamcco/vim-language-server
+lsp.vimls.setup {on_attach = on_attach}
+
+-- https://github.com/vscode-langservers/vscode-json-languageserver
+lsp.jsonls.setup {
+    on_attach = on_attach,
+    cmd = {"json-languageserver", "--stdio"}
 }
 
+-- https://github.com/vscode-langservers/vscode-css-languageserver-bin
+lsp.cssls.setup {on_attach = on_attach}
 
--- Some arbitrary servers
-
+-- https://github.com/vscode-langservers/vscode-html-languageserver-bin
+lsp.html.setup {on_attach = on_attach}
 
 require'compe'.setup {
   enabled = true;
@@ -43,26 +55,22 @@ require'compe'.setup {
   max_abbr_width = 100;
   max_kind_width = 100;
   max_menu_width = 100;
+  documentation = true;
 
   source = {
     path = true;
-    buffer = true;
+    buffer = {priority = 100},
     calc = true;
-    vsnip = true;
+    vsnip = {priority = 300},
     nvim_lsp = true;
+    nvim_lsp = {priority = 200},
     nvim_lua = true;
     spell = true;
     tags = true;
     snippets_nvim = true;
+    treesitter = true;
   };
 }
 
--- Enable diagnostics
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = true,
-    signs = true,
-    update_in_insert = true,
-  }
-)
-
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
