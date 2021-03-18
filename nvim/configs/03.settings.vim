@@ -35,20 +35,11 @@ hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 hi! LineNr  ctermfg=8 ctermbg=NONE guifg=#65737e guibg=NONE
 
-let g:airline_theme='base16'
 
 "}
 
 "}}
 
-"airline {{
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#tabline#buffer_nr_show = 1
-
-"}}
 
 "DEOPLETE {{
 let g:python3_host_prog= '/usr/local/opt/python@3.8/bin/python3'
@@ -89,24 +80,12 @@ let g:jsx_ext_required = 1
 
 let g:ale_fixers = {
 \   '*': ['prettier','remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['black'],
 \   'javascript': ['prettier','eslint'],
 \   'javascriptreact': ['prettier','eslint'],
 \   'typescript': ['prettier','tslint'],
 \   'typescriptreact': ['prettier','tslint'],
-\   'rust': ['prettier','rustfmt'],
 \}
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_text_changed = 'never'
 let g:ale_fix_on_save = 1
-let g:ale_linters_explicit = 1
-augroup FiletypeGroup
-    autocmd!
-    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-augroup END
-
 "}}
 
 "UltiSnips {{
@@ -123,15 +102,9 @@ let g:EasyMotion_smartcase = 1
 "ctrslf {{
 let g:ctrlsf_default_view_mode = 'compact'
 "}}
-"rust.vim{{
-let g:rustfmt_autosave = 1
-let g:rust_clip_command = 'pbcopy'
-let g:racer_cmd = "/Users/lap00822/Desktop/rust/racer/target/release/racer"
-let g:racer_experimental_completer = 1
-"}}
 
 "context{{
-let g:context_enabled = 1
+"let g:context_enabled = 1
 "}}
 "fzf{{
 " An action can be a reference to a function that processes selected lines
@@ -150,5 +123,17 @@ let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 let g:fzf_layout = { 'down': '50%' }
 let g:fzf_buffers_jump = 1
 silent! nmap <C-P> :Files<CR>
+
+"}}
+
+"indentline{{
+let g:indentLine_setColors = 0
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_enabled = 0
+"}}
+
+nmap <F8> :TagbarToggle<CR>
+
+"prettier{{
 
 "}}
