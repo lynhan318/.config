@@ -24,7 +24,7 @@ vim.api.nvim_set_keymap('n', '<Leader>a', 'ggVG', { noremap = true })
 vim.api.nvim_set_keymap('n', ';', ':', { noremap = true})
 
 -- Close all buffers
-vim.api.nvim_set_keymap('n', '<C-w><C-k>', ':bufdo :Bdelete<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-w><C-k>', ':bufdo :bd<CR>', { noremap = true })
 -- Close current buffer
 vim.api.nvim_set_keymap('n', '<C-w>', ':bd<CR>', { noremap = true })
 
@@ -34,9 +34,6 @@ vim.api.nvim_set_keymap('n', '<C-w>', ':bd<CR>', { noremap = true })
 -- Ctrl-s to save
 vim.api.nvim_set_keymap('n', '<C-s>', ':w!<CR>', { noremap = true })
 vim.api.nvim_set_keymap('i', 'ww', '<ESC>:w!<CR>', { noremap = true })
--- Ctrl-Shift-s to save all
-vim.api.nvim_set_keymap('n', '<CS-s>', ':wa!<CR>', { noremap = true, silent =  true })
-vim.api.nvim_set_keymap('i', '<CS-s>', '<ESC>:wa!<CR>', { noremap = true, silent =  true })
 
 -- Tabbing
 vim.cmd([[vnoremap < <gv]])
