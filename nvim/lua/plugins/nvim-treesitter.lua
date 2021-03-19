@@ -8,6 +8,7 @@ return function()
         "tsx",
         "html",
         "jsdoc",
+        "rust",
         "css",
         "bash",
         "lua"

@@ -21,7 +21,6 @@ return function()
           vim.fn.winrestview(view)
           if bufnr == vim.api.nvim_get_current_buf() then
               vim.cmd [[noautocmd :update]]
-              vim.cmd [[GitGutter]]
           end
       end
   end
@@ -118,7 +117,7 @@ return function()
   -- https://github.com/theia-ide/typescript-language-server
   lspconfig.tsserver.setup {
       on_attach = function(client)
-          client.resolved_capabilities.document_formatting = false
+          client.resolved_capabilities.document_formatting = true
           on_attach(client)
       end
   }
@@ -145,21 +144,37 @@ return function()
   lspconfig.bashls.setup {on_attach = on_attach}
 
 
-  local prettier = require "efm/prettier"
-  local eslint = require "efm/eslint"
-  local shellcheck = require "efm/shellcheck"
-  local misspell = require "efm/misspell"
+  local prettier = {
+    formatCommand = ([[
+        ./node_modules/.bin/prettier
+        ${--config-precedence:configPrecedence}
+        ${--tab-width:tabWidth}
+        ${--single-quote:singleQuote}
+        ${--trailing-comma:trailingComma}
+    ]]):gsub(
+        "\n",
+        ""
+    )
+  }
+  local eslint = {
+    lintCommand = "eslint_d -f unix --stdin",
+    lintFormats = {"%f:%l:%c: %m"},
+    formatCommand = "eslint_d --fix-to-stdout --stdin",
+    formatStdin = true,
+    lintIgnoreExitCode = true,
+    lintStdin = true,
+    codeAction = true
+  }
 
   -- https://github.com/mattn/efm-langserver
   lspconfig.efm.setup {
       on_attach = on_attach,
-      init_options = {documentFormatting = true},
+      init_options = { documentFormatting = true },
       -- set log not working
       -- cmd = {'efm-langserver', '-logfile', '~/Desktop/efm.log', '-loglevel', '10'},
       settings = {
           rootMarkers = {".git/"},
           languages = {
-              ["="] = {misspell},
               typescript = {prettier, eslint},
               javascript = {prettier, eslint},
               typescriptreact = {prettier, eslint},
@@ -171,7 +186,6 @@ return function()
               css = {prettier},
               rust = {prettier},
               markdown = {prettier},
-              sh = {shellcheck}
           }
       }
   }
