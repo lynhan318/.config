@@ -11,35 +11,6 @@ return function()
       vim.api.nvim_buf_set_keymap(0, mode, key, result, {noremap = noremap, silent = true, expr = expr})
   end
 
-  -- Icons
-  -- vim.lsp.protocol.CompletionItemKind = {
-  --     " [text]",
-  --     " [method]",
-  --     " [function]",
-  --     " [constructor]",
-  --     "ﰠ [field]",
-  --     " [variable]",
-  --     " [class]",
-  --     " [interface]",
-  --     " [module]",
-  --     " [property]",
-  --     " [unit]",
-  --     " [value]",
-  --     " [enum]",
-  --     " [key]",
-  --     "﬌ [snippet]",
-  --     " [color]",
-  --     " [file]",
-  --     " [reference]",
-  --     " [folder]",
-  --     " [enum member]",
-  --     " [constant]",
-  --     " [struct]",
-  --     "⌘ [event]",
-  --     " [operator]",
-  --     "♛ [type]"
-  -- }
-
   vim.lsp.handlers["textDocument/formatting"] = function(err, _, result, _, bufnr)
       if err ~= nil or result == nil then
           return
@@ -198,8 +169,9 @@ return function()
               html = {prettier},
               scss = {prettier},
               css = {prettier},
+              rust = {prettier},
               markdown = {prettier},
-              sh = {shellcheck},
+              sh = {shellcheck}
           }
       }
   }

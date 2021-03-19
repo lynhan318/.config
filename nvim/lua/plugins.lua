@@ -37,8 +37,8 @@ return require('packer').startup(
     use {'tpope/vim-fugitive'};
 
     -- LSP
-    use {'neovim/nvim-lspconfig', config = require'plugins.nvim-lspconfig'};
-    -- use {'nvim-lua/lsp_extensions.nvim', config = require'plugins.lsp-extensions'};
+    use {'neovim/nvim-lspconfig', config = require'plugins.nvim-lspconfig' };
+    use {'nvim-lua/lsp_extensions.nvim'};
     
     -- Surround
     use {'tpope/vim-surround'};
