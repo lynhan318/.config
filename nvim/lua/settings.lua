@@ -38,38 +38,11 @@ cmd('set updatetime=300')                      -- Faster completion
 cmd('set timeoutlen=500')                      -- By default timeoutlen is 1000 ms
 cmd('set formatoptions-=cro')                  -- Stop newline continution of comments
 -- cmd('set formatoptions-=c formatoptions-=r formatoptions-=o') -- Stop newline continution of comments
-cmd('set clipboard=unnamed,unnamedplus')       -- Copy paste between vim and everything else
 -- Filetype plugin indent on
 cmd('set nu rnu')
 cmd('set completeopt=menu,menuone,noselect')
 cmd('set signcolumn=yes')
 cmd('set shortmess+=c')
-function nvim_create_augroups(definitions)
-	for group_name, definition in pairs(definitions) do
-		api.nvim_command('augroup '..group_name)
-		api.nvim_command('autocmd!')
-		for _, def in ipairs(definition) do
-			-- if type(def) == 'table' and type(def[#def]) == 'function' then
-			-- 	def[#def] = lua_callback(def[#def])
-			-- end
-			local command = table.concat(vim.tbl_flatten{'autocmd', def}, ' ')
-			api.nvim_command(command)
-		end
-		api.nvim_command('augroup END')
-	end
-end
-
-local autocmds = {
-  highlight_yank = {
-    {"TextYankPost", "*", "silent! lua require'vim.highlight'.on_yank{'IncSearch', 200}"};
-  };
-  -- https://vi.stackexchange.com/a/1985
-  no_comment_on_new_line = {
-    {'FileType', '*', 'set fo-=c fo-=r fo-=o'};
-  },
-}
-
-nvim_create_augroups(autocmds)
 
 -- file types
 cmd('autocmd BufNewFile,BufRead *.txml set filetype=xml')

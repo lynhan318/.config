@@ -21,6 +21,7 @@ vim.api.nvim_set_keymap('i', 'jk', '<esc>', { noremap = true, silent = true })
 
 -- Select all
 vim.api.nvim_set_keymap('n', '<Leader>a', 'ggVG', { noremap = true })
+vim.api.nvim_set_keymap('n', ';', ':', { noremap = true})
 
 -- Close all buffers
 vim.api.nvim_set_keymap('n', '<C-w><C-k>', ':bufdo :Bdelete<CR>', { noremap = true })
@@ -51,7 +52,7 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Esc><Esc>', ':nohlsearch<CR>', { noremap = true })
 
 -- Replace
-vim.api.nvim_set_keymap('n', '<C-c>', ':%s//g<Left><Left>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<S>', ':%s//g<Left><Left>', { noremap = true })
 
 -- Move selected line / block of text in visual mode
 vim.cmd([[xnoremap K :move '<-2<CR>gv-gv]])

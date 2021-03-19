@@ -12,38 +12,33 @@ return function()
   end
 
   -- Icons
-  vim.lsp.protocol.CompletionItemKind = {
-      " [text]",
-      " [method]",
-      " [function]",
-      " [constructor]",
-      "ﰠ [field]",
-      " [variable]",
-      " [class]",
-      " [interface]",
-      " [module]",
-      " [property]",
-      " [unit]",
-      " [value]",
-      " [enum]",
-      " [key]",
-      "﬌ [snippet]",
-      " [color]",
-      " [file]",
-      " [reference]",
-      " [folder]",
-      " [enum member]",
-      " [constant]",
-      " [struct]",
-      "⌘ [event]",
-      " [operator]",
-      "♛ [type]"
-  }
-
-  vim.fn.sign_define("LspDiagnosticsSignError", {text = "", numhl = "LspDiagnosticsDefaultError"})
-  vim.fn.sign_define("LspDiagnosticsSignWarning", {text = "", numhl = "LspDiagnosticsDefaultWarning"})
-  vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "", numhl = "LspDiagnosticsDefaultInformation"})
-  vim.fn.sign_define("LspDiagnosticsSignHint", {text = "", numhl = "LspDiagnosticsDefaultHint"})
+  -- vim.lsp.protocol.CompletionItemKind = {
+  --     " [text]",
+  --     " [method]",
+  --     " [function]",
+  --     " [constructor]",
+  --     "ﰠ [field]",
+  --     " [variable]",
+  --     " [class]",
+  --     " [interface]",
+  --     " [module]",
+  --     " [property]",
+  --     " [unit]",
+  --     " [value]",
+  --     " [enum]",
+  --     " [key]",
+  --     "﬌ [snippet]",
+  --     " [color]",
+  --     " [file]",
+  --     " [reference]",
+  --     " [folder]",
+  --     " [enum member]",
+  --     " [constant]",
+  --     " [struct]",
+  --     "⌘ [event]",
+  --     " [operator]",
+  --     "♛ [type]"
+  -- }
 
   vim.lsp.handlers["textDocument/formatting"] = function(err, _, result, _, bufnr)
       if err ~= nil or result == nil then
@@ -133,7 +128,7 @@ return function()
       -- map('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>')
       -- map('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>')
       map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
-      map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
+    --   map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
       map('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>')
       map('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>')
       map('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>')
@@ -169,6 +164,9 @@ return function()
   -- https://github.com/vscode-langservers/vscode-css-languageserver-bin
   lspconfig.cssls.setup {on_attach = on_attach}
 
+  lspconfig.rust_analyzer.setup {
+      on_attach = on_attach,
+  }
   -- https://github.com/vscode-langservers/vscode-html-languageserver-bin
   lspconfig.html.setup {on_attach = on_attach}
 
@@ -205,5 +203,4 @@ return function()
           }
       }
   }
-
 end

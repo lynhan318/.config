@@ -1,9 +1,9 @@
 return function()
   -- mappings
-  vim.api.nvim_set_keymap('n', '<C-P>', '<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files<cr>', { noremap = true })
-  vim.api.nvim_set_keymap('n', '<C-F>', '<cmd>Telescope live_grep find_command=rg,--ignore,--hidden,--files<cr>', { noremap = true })
-  vim.api.nvim_set_keymap('n', '<C-B>', '<cmd>Telescope buffers<cr>', { noremap = true })
-  vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { noremap = true })
+  vim.api.nvim_set_keymap('n', '<leader>p', ':Telescope find_files find_command=rg,--ignore,--hidden,--files<cr>', { noremap = true })
+  vim.api.nvim_set_keymap('n', '<leader>ff', ':Telescope live_grep find_command=rg,--ignore,--hidden,--files<cr>', { noremap = true })
+  vim.api.nvim_set_keymap('n', '<leader>b', ':Telescope buffers<cr>', { noremap = true })
+  vim.api.nvim_set_keymap('n', '<leader>fh', ':Telescope help_tags<cr>', { noremap = true })
 
   vim.o.termguicolors = true
   local actions = require('telescope.actions')

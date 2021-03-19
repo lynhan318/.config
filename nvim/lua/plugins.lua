@@ -38,6 +38,7 @@ return require('packer').startup(
 
     -- LSP
     use {'neovim/nvim-lspconfig', config = require'plugins.nvim-lspconfig'};
+    -- use {'nvim-lua/lsp_extensions.nvim', config = require'plugins.lsp-extensions'};
     
     -- Surround
     use {'tpope/vim-surround'};
@@ -55,19 +56,7 @@ return require('packer').startup(
     -- Ranger
     use {'kevinhwang91/rnvimr', config = require'plugins.rnvimr'};
 
-    -- Buffer tab
-    use {'akinsho/nvim-bufferline.lua', config = require'plugins.nvim-bufferline'};
-
-    -- Defx
-    -- use {'kristijanhusak/defx-icons'};
-    -- use {'kristijanhusak/defx-git'};
-    -- use {
-    --   'Shougo/defx.nvim',
-    --   requires = {{'kristijanhusak/defx-icons'}, {'kristijanhusak/defx-git'}},
-    --   config = require'plugins.defx',
-    --   run = ':UpdateRemotePlugins'
-    -- }
-
+    
     -- Telescope
     use {
       'nvim-telescope/telescope.nvim',
@@ -75,12 +64,7 @@ return require('packer').startup(
       config = require'plugins.telescope'
     }
 
-    -- Auto change html tags
-    use {'andrewradev/tagalong.vim'}
-
     -- Treesitter
-    use {'nvim-treesitter/nvim-treesitter-refactor'}
-    use {'nvim-treesitter/nvim-treesitter-textobjects'}
     use {'nvim-treesitter/nvim-treesitter', 
       run = ':TSUpdate', 
       config = require'plugins.nvim-treesitter'
@@ -92,15 +76,26 @@ return require('packer').startup(
     -- Completion
     use {'hrsh7th/nvim-compe', config = require'plugins.nvim-compe'}
 
-    -- File explorer
-    use {'kyazdani42/nvim-tree.lua', config = require'plugins.nvim-tree'}
-
     -- Smooth scroll
     use {'psliwka/vim-smoothie'}
 
     -- Theme
     use {'chriskempson/base16-vim', config = require('plugins.theme')}
     -- Status line
-     use {'glepnir/galaxyline.nvim', branch = 'main', config = require'plugins.galaxyline'} 
+    use {
+      'hoob3rt/lualine.nvim',
+      requires = {'kyazdani42/nvim-web-devicons', opt = true},
+      config = require'plugins.galaxyline'
+    }
+    use {'rust-lang/rust.vim'}
+
+    -- Defx 
+    use {'kristijanhusak/defx-icons'};
+    use {'kristijanhusak/defx-git'};
+    use {
+     'Shougo/defx.nvim',
+      requires = {{'kristijanhusak/defx-icons'}, {'kristijanhusak/defx-git'}},
+      run = ':UpdateRemotePlugins'
+    };
   end
 )
