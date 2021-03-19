@@ -26,7 +26,7 @@ vim.api.nvim_set_keymap('n', ';', ':', { noremap = true})
 -- Close all buffers
 vim.api.nvim_set_keymap('n', '<C-w><C-k>', ':bufdo :Bdelete<CR>', { noremap = true })
 -- Close current buffer
-vim.api.nvim_set_keymap('n', '<C-w>', ':Bdelete<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-w>', ':bd<CR>', { noremap = true })
 
 -- Toggle relative line number
 -- vim.api.nvim_set_keymap('n', '<C-L><C-L>', ':set invrelativenumber<CR>', { noremap = true })

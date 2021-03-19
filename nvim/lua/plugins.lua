@@ -50,9 +50,6 @@ return require('packer').startup(
     -- Sneak
     use {'justinmk/vim-sneak', config = require'plugins.vim-sneak'};
 
-    -- Bbye (Buffer Bye)
-    use {'moll/vim-bbye'};
-
     -- Ranger
     use {'kevinhwang91/rnvimr', config = require'plugins.rnvimr'};
 
@@ -97,5 +94,16 @@ return require('packer').startup(
       requires = {{'kristijanhusak/defx-icons'}, {'kristijanhusak/defx-git'}},
       run = ':UpdateRemotePlugins'
     };
+    use {
+      'glepnir/galaxyline.nvim',
+        branch = 'main',
+        -- your statusline
+        config = require('plugins.galaxyline'),
+        -- some optional icons
+        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    };
+    -- Buffer tab
+    use {'akinsho/nvim-bufferline.lua', config = require'plugins.bufferline'};
+
   end
 )
