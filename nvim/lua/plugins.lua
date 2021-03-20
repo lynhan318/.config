@@ -1,14 +1,6 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
--- Select all
-vim.api.nvim_set_keymap('n', '<Leader>a', 'ggVG', { noremap = true })
-
--- Close all buffers
-vim.api.nvim_set_keymap('n', '<C-w><C-k>', ':bufdo :bd<CR>', { noremap = true, nowait=true })
-vim.api.nvim_set_keymap('n', '<C-s>', ':w!<CR>', { noremap = true,nowait=true })
-vim.api.nvim_set_keymap('n', '<C-w>', ':bd<CR>', { noremap = true,nowait=true })
-
 local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then

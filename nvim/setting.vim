@@ -77,5 +77,8 @@ vnoremap > >gv
 vnoremap <silent> y y:call ClipboardYank()<cr>
 vnoremap <silent> d d:call ClipboardYank()<cr>
 nnoremap <silent> p :call ClipboardPaste()<cr>p
-
+nnoremap <nowait><c-w> :bd<cr>
+nnoremap <c-s> :w!<cr>
+nnoremap <nowait><c-w><c-k> :bufdo bd<cr>
+nnoremap <leader>a ggVG<cr>
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
