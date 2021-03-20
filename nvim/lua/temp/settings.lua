@@ -3,7 +3,7 @@ local api = vim.api
 local cmd = api.nvim_command
 
 g.mapleader = ' ' -- Set leader key
-
+vim.o.termguicolors = true
 cmd('set hidden')                              -- Required to keep multiple buffers open multiple buffers
 cmd('set lazyredraw')                          -- Improve scrolling performance when navigating through large results
 cmd('set ttyfast')                             -- U got a fast terminal

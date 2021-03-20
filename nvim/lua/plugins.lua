@@ -39,31 +39,24 @@ return require('packer').startup(
     -- LSP
     use {'neovim/nvim-lspconfig', config = require'plugins.nvim-lspconfig' };
     use {'nvim-lua/lsp_extensions.nvim'};
-    
     -- Surround
     use {'tpope/vim-surround'};
 
     -- Closetags
-    -- FIXME
-    use {'alvan/vim-closetag', config = require'plugins.vim-closetag'};
-
-    -- Sneak
-    use {'justinmk/vim-sneak', config = require'plugins.vim-sneak'};
-
+    use {'alvan/vim-closetag'};
     -- Ranger
     use {'kevinhwang91/rnvimr', config = require'plugins.rnvimr'};
 
-    
     -- Telescope
-    use {
-      'nvim-telescope/telescope.nvim',
-      requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
-      config = require'plugins.telescope'
-    }
+    -- use {
+    --   'nvim-telescope/telescope.nvim',
+    --   requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
+    --   config = require'plugins.telescope'
+    -- }
 
     -- Treesitter
-    use {'nvim-treesitter/nvim-treesitter', 
-      run = ':TSUpdate', 
+    use {'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate',
       config = require'plugins.nvim-treesitter'
     }
 
@@ -78,12 +71,6 @@ return require('packer').startup(
 
     -- Theme
     use {'chriskempson/base16-vim', config = require('plugins.theme')}
-    -- Status line
-    use {
-      'hoob3rt/lualine.nvim',
-      requires = {'kyazdani42/nvim-web-devicons', opt = true},
-      config = require'plugins.galaxyline'
-    }
     use {'rust-lang/rust.vim'}
 
     -- Defx 
@@ -104,6 +91,21 @@ return require('packer').startup(
     };
     -- Buffer tab
     use {'akinsho/nvim-bufferline.lua', config = require'plugins.bufferline'};
-
+    -- EasyMotion
+    use {'easymotion/vim-easymotion'}
+    -- Multi cursor
+    use {'terryma/vim-multiple-cursors'}
+    -- airline
+    -- use {'vim-airline/vim-airline'};
+    -- use {'vim-airline/vim-airline-themes'};
+    -- fuzzy
+    use {
+      'ojroques/nvim-lspfuzzy',
+      config = require'plugins.fzf',
+      requires = {
+        {'junegunn/fzf'},
+        {'junegunn/fzf.vim'},  -- to enable preview (optional)
+      }
+    }
   end
 )

@@ -1,6 +1,5 @@
 return function()
   local lspconfig = require "lspconfig"
-
   local map = function(mode, key, result, noremap, expr)
       if noremap == nil then
           noremap = true
@@ -117,7 +116,6 @@ return function()
   -- https://github.com/theia-ide/typescript-language-server
   lspconfig.tsserver.setup {
       on_attach = function(client)
-          client.resolved_capabilities.document_formatting = true
           on_attach(client)
       end
   }
@@ -168,10 +166,7 @@ return function()
 
   -- https://github.com/mattn/efm-langserver
   lspconfig.efm.setup {
-      on_attach = on_attach,
       init_options = { documentFormatting = true },
-      -- set log not working
-      -- cmd = {'efm-langserver', '-logfile', '~/Desktop/efm.log', '-loglevel', '10'},
       settings = {
           rootMarkers = {".git/"},
           languages = {

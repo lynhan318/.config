@@ -6,10 +6,10 @@
 -- vim.api.nvim_set_keymap('i', '<c-k>', '["\<C-p>]', { exp = true})
 
 -- Use shift + arrow to resize windows
-vim.api.nvim_set_keymap('n', '<S-Up>', '<M-j> :resize -2<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<S-Down>', '<M-k> :resize +2<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<S-Left>', '<M-h> :vertical resize -2<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<S-Right>', '<M-l> :vertical resize +2<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<S-Up>', '<M-j> :resize -5<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<S-Down>', '<M-k> :resize +5<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<S-Left>', '<M-h> :vertical resize -5<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<S-Right>', '<M-l> :vertical resize +5<CR>', { noremap = true })
 
 -- ESC with kj or jk
 vim.api.nvim_set_keymap('i', 'kj', '<esc>', { noremap = true, silent = true })
@@ -40,10 +40,10 @@ vim.cmd([[vnoremap < <gv]])
 vim.cmd([[vnoremap > >gv]])
 
 -- Window navigation
-vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-h>', ':wincmd h<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-j>', ':wincmd j<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-k>', ':wincmd k<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-l>', ':wincmd l<CR>', { noremap = true })
 
 -- Clean highlight search
 vim.api.nvim_set_keymap('n', '<Esc><Esc>', ':nohlsearch<CR>', { noremap = true })
