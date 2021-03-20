@@ -56,6 +56,6 @@ let g:closetag_emptyTags_caseSensitive = 1
 "}}
 "fzf{{
 nmap <silent><leader>p :Files<CR>
-nmap <silent><leader>l :Lines<CR>
+nmap <silent><leader>l :Ag<CR>
 "}}
 

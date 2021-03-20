@@ -12,9 +12,9 @@ cmd('set nowrap')                              -- Display long lines as just one
 cmd('set encoding=utf-8')                      -- The encoding displayed
 cmd('set pumheight=10')                        -- Makes popup menu smaller
 cmd('set fileencoding=utf-8')                  -- The encoding written to file
-cmd('set ruler')              			           -- Show the cursor position all the time
+cmd('set ruler')                               -- Show the cursor position all the time
 cmd('set cmdheight=2')                         -- More space for displaying messages
-cmd('set iskeyword+=-')                      	 -- treat dash separated words as a word text object--
+cmd('set iskeyword+=-')                       -- treat dash separated words as a word text object--
 cmd('set mouse=a')                             -- Enable your mouse
 cmd('set splitbelow')                          -- Horizontal splits will automatically be below
 cmd('set splitright')                          -- Vertical splits will automatically be to the right
