@@ -58,4 +58,8 @@ let g:closetag_emptyTags_caseSensitive = 1
 nmap <silent><leader>p :Files<CR>
 nmap <silent><leader>l :Ag<CR>
 "}}
+"prettier{{
+let g:prettier#quickfix_enabled = 0
+
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.json,*.md,*.vue,*.yaml,*.html PrettierAsync
 

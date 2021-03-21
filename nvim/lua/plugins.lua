@@ -107,5 +107,6 @@ return require('packer').startup(
         {'junegunn/fzf.vim'},  -- to enable preview (optional)
       }
     }
+    use {'prettier/vim-prettier'}
   end
 )
