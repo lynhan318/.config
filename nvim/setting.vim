@@ -2,6 +2,7 @@ let mapleader = "\<Space>"
 
 set expandtab
 set list
+filetype on
 filetype plugin on
 filetype plugin indent on
 set nocompatible
@@ -9,8 +10,8 @@ set nocompatible
 syntax on
 set encoding=UTF-8
 set mouse=a
-set scroll=10
-
+set scroll=15
+set termguicolors
 set history=1000
 set undolevels=1000
 
@@ -38,8 +39,6 @@ set lazyredraw
 set nobackup
 set noswapfile
 set nowrap
-set laststatus=2
-set signcolumn="yes:3"
 set visualbell
 set noerrorbells
 

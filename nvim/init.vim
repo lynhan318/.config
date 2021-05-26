@@ -5,4 +5,4 @@ source ~/.config/nvim/config.vim
 source ~/.config/nvim/defx.vim
 source ~/.config/nvim/deno.vim
 
-" luafile ~/.config/nvim/lua/plugins/nvim-lspconfig.lua
+"luafile ~/.config/nvim/lua/plugins/nvim-lspconfig.lua

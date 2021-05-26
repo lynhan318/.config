@@ -20,7 +20,7 @@ return require('packer').startup(
 
     -- Icons
     use {'ryanoasis/vim-devicons'}
-    use {'preservim/tagbar'}
+    use {'majutsushi/tagbar'}
     use {'kyazdani42/nvim-web-devicons', config = require('plugins.nvim-web-devicons')}
 
     -- Auto pairs for '(' '[' '{'

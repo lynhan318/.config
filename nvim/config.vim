@@ -48,5 +48,46 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.scss,*.json,*.md,*.vue,*
 let g:rustfmt_autosave = 1
 "}}
 
-"tagbar
+"vista {{
+" function! NearestMethodOrFunction() abort
+"   return get(b:, 'vista_nearest_method_or_function', '')
+" endfunction
+" let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+" let g:vista_sidebar_width = 40
+
+" " set statusline+=%{NearestMethodOrFunction()}
+" autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+" nnoremap <silent><leader>vo :Vista<CR>
+" nnoremap <silent><leader>vc :Vista!<CR>
+"}}
+
+" Tagbar{{
 nmap <F8> :TagbarToggle<CR>
+let g:tagbar_ctags_bin="/usr/local/bin/ctags"
+let g:tagbar_type_typescript = {
+    \ 'ctagstype': 'typescript',
+    \ 'kinds': [
+      \ 'c:class',
+      \ 'n:namespace',
+      \ 'f:function',
+      \ 'G:generator',
+      \ 'v:variable',
+      \ 'm:method',
+      \ 'p:property',
+      \ 'i:interface',
+      \ 'g:enum',
+      \ 't:type',
+      \ 'a:alias',
+    \ ],
+    \'sro': '.',
+      \ 'kind2scope' : {
+      \ 'c' : 'class',
+      \ 'n' : 'namespace',
+      \ 'i' : 'interface',
+      \ 'f' : 'function',
+      \ 'G' : 'generator',
+      \ 'm' : 'method',
+      \ 'p' : 'property',
+      \},
+\ }
+"}}
