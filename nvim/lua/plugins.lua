@@ -52,6 +52,10 @@ return require('packer').startup(
       }
     }
 
+
+    -- Lightline
+    use {'itchyny/lightline.vim'}
+
     -- Surround
     use {'tpope/vim-surround'}
     use {'windwp/nvim-ts-autotag'}

@@ -100,7 +100,7 @@ return function()-- TODO figure out why this don't work
               doc_lines = 10, -- only show one line of comment set to 0 if you do not want API comments be shown
 
               hint_enable = true, -- virtual hint enable
-              hint_prefix = "🐼 ",  -- Panda for parameter
+              hint_prefix = "襁 ",  -- Panda for parameter
               hint_scheme = "String",
 
               handler_opts = {
@@ -140,10 +140,6 @@ return function()-- TODO figure out why this don't work
         vim.cmd('nnoremap <silent> gS <cmd>lua require("lspsaga.signaturehelp").signature_help()<CR>')
         vim.cmd("nnoremap <silent> g[ :Lspsaga diagnostic_jump_prev<CR>")
         vim.cmd("nnoremap <silent> g] :Lspsaga diagnostic_jump_next<CR>")
-        -- scroll down hover doc or scroll in definition preview
-        vim.cmd("nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>")
-        -- scroll up hover doc
-        vim.cmd("nnoremap <silent> <C-e> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>")
 
         vim.cmd('command! -nargs=0 LspVirtualTextToggle lua require("lsp/virtual_text").toggle()')
 

@@ -6,7 +6,7 @@ filetype on
 filetype plugin on
 filetype plugin indent on
 set nocompatible
-
+set laststatus=2
 syntax on
 set encoding=UTF-8
 set mouse=a
@@ -40,6 +40,7 @@ set nobackup
 set noswapfile
 set nowrap
 set visualbell
+set noshowmode "hide mod insert,normal,...
 set noerrorbells
 
 "augroup CursorLine
