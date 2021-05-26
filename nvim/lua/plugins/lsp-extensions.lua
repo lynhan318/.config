@@ -1,7 +1,7 @@
 return function()
- require'lsp_extensions'.inlay_hints{ 
+ require'lsp_extensions'.inlay_hints{
       prefix = '',
-      highlight = "Comment", 
+      highlight = "Comment",
       enabled = {"TypeHint", "ChainingHint", "ParameterHint"}
     }
 end

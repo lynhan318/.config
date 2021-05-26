@@ -1,4 +1,5 @@
-let mapleader ="\<Space>"
+let mapleader = "\<Space>"
+
 set expandtab
 set list
 filetype plugin on
@@ -29,7 +30,6 @@ set smartcase
 set smartindent
 set autoindent
 set cursorline
-set termguicolors
 
 set tabstop=4
 set softtabstop=0
@@ -38,7 +38,8 @@ set lazyredraw
 set nobackup
 set noswapfile
 set nowrap
-
+set laststatus=2
+set signcolumn="yes:3"
 set visualbell
 set noerrorbells
 
@@ -82,3 +83,5 @@ nnoremap <c-s> :w!<cr>
 nnoremap <nowait><c-w><c-k> :bufdo bd<cr>
 nnoremap <leader>a ggVG<cr>
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+autocmd BufNewFile,BufRead *.mdx set filetype=markdown.mdx

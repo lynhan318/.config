@@ -20,6 +20,7 @@ return require('packer').startup(
 
     -- Icons
     use {'ryanoasis/vim-devicons'}
+    use {'preservim/tagbar'}
     use {'kyazdani42/nvim-web-devicons', config = require('plugins.nvim-web-devicons')}
 
     -- Auto pairs for '(' '[' '{'
@@ -30,23 +31,30 @@ return require('packer').startup(
     use {'norcalli/nvim-colorizer.lua', config = require'plugins.nvim-colorizer'}
 
     -- Comment
-    use {'tpope/vim-commentary'};
+    use {'tpope/vim-commentary'}
 
     -- Git
-    use {'airblade/vim-gitgutter'};
-    use {'tpope/vim-fugitive'};
+    use {'tpope/vim-fugitive'}
 
     -- LSP
-    use {'neovim/nvim-lspconfig', config = require'plugins.nvim-lspconfig' };
-    use {'nvim-lua/lsp_extensions.nvim'};
+    use {'neovim/nvim-lspconfig', config = require'plugins.nvim-lspconfig' }
+    use {'nvim-lua/lsp-status.nvim'}
+    use {'glepnir/lspsaga.nvim'}
+    use {'kabouzeid/nvim-lspinstall'}
+    use {'nvim-lua/lsp_extensions.nvim'}
+    use {'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons' }
+    use {
+      'ojroques/nvim-lspfuzzy',
+      config = require'plugins.fzf',
+      requires = {
+        {'junegunn/fzf'},
+        {'junegunn/fzf.vim'},  -- to enable preview (optional)
+      }
+    }
+
     -- Surround
-    use {'tpope/vim-surround'};
-
-    -- Closetags
-    use {'alvan/vim-closetag'};
-    -- Ranger
-    use {'kevinhwang91/rnvimr', config = require'plugins.rnvimr'};
-
+    use {'tpope/vim-surround'}
+    use {'windwp/nvim-ts-autotag'}
     -- Telescope
     -- use {
     --   'nvim-telescope/telescope.nvim',
@@ -60,13 +68,16 @@ return require('packer').startup(
       config = require'plugins.nvim-treesitter'
     }
 
+    -- Barbar, bufferline
+    use {"romgrk/barbar.nvim", requires = "kyazdani42/nvim-web-devicons"}
+
     -- Snippets
     use {"hrsh7th/vim-vsnip", requires = "hrsh7th/vim-vsnip-integ", config = require"plugins.vim-vsnip"}
 
     -- Completion
     use {'hrsh7th/nvim-compe', config = require'plugins.nvim-compe'}
 
-    -- Smooth scroll
+    -- Smooth scrollw
     use {'psliwka/vim-smoothie'}
 
     -- Theme
@@ -81,16 +92,17 @@ return require('packer').startup(
       requires = {{'kristijanhusak/defx-icons'}, {'kristijanhusak/defx-git'}},
       run = ':UpdateRemotePlugins'
     };
-    use {
-      'glepnir/galaxyline.nvim',
-        branch = 'main',
-        -- your statusline
-        config = require('plugins.galaxyline'),
-        -- some optional icons
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
-    };
+    -- use {
+    --   'glepnir/galaxyline.nvim',
+    --     branch = 'main',
+    --     -- your statusline
+    --     config = require('plugins.galaxyline'),
+    --     -- some optional icons
+    --     requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    -- };
     -- Buffer tab
-    use {'akinsho/nvim-bufferline.lua', config = require'plugins.bufferline'};
+    -- use {'akinsho/nvim-bufferline.lua', config = require'plugins.bufferline'};
+    -- use {'bling/vim-bufferline'}
     -- EasyMotion
     use {'easymotion/vim-easymotion'}
     -- Multi cursor
@@ -98,15 +110,7 @@ return require('packer').startup(
     -- airline
     -- use {'vim-airline/vim-airline'};
     -- use {'vim-airline/vim-airline-themes'};
-    -- fuzzy
-    use {
-      'ojroques/nvim-lspfuzzy',
-      config = require'plugins.fzf',
-      requires = {
-        {'junegunn/fzf'},
-        {'junegunn/fzf.vim'},  -- to enable preview (optional)
-      }
-    }
     use {'prettier/vim-prettier'}
+    use {'ray-x/lsp_signature.nvim'}
   end
 )

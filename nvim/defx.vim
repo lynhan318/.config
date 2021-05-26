@@ -174,7 +174,7 @@ augroup vimrc_defx
 augroup END
 
 nmap <silent><C-b> :Defx<CR>
-nmap <silent><C-e> :Defx `expand('%:p:h')` -search=`expand('%:p')`<CR>
+nmap <silent><C-i> :Defx `expand('%:p:h')` -search=`expand('%:p')`<CR>
 
 "nnoremap <silent><C-b>:Defx <cr>
 "nnoremap <silent><C-i>:call <sid>defx_open({'find_current_file': v:true })<CR>

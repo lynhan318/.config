@@ -5,23 +5,6 @@ return function()
   local section = gl.section
   gl.short_line_list = {"defx","LuaTree", "packager", "Floaterm", "coc-eplorer"}
   
-  local one_dark_colors = {
-    bg = "#2e3440",
-    fg = "#81a1c1",
-    line_bg = "#2e3440",
-    fg_green = "#6d96a5",
-    yellow = "#fabd2f",
-    cyan = "#008080",
-    darkblue = "#081633",
-    green = "#608B4E",
-    orange = "#FF8800",
-    purple = "#5d4d7a",
-    magenta = "#d16d9e",
-    grey = "#c0c0c0",
-    blue = "#569CD6",
-    red = "#D16969"
-  }
-  
   local nord_colors = {
     bg = "NONE",
     -- bg = "#2E3440",

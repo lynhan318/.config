@@ -1,7 +1,7 @@
 return function()
     -- mappings
-    vim.api.nvim_set_keymap("n", "<TAB>", ":BufferLineCycleNext<CR>", {noremap=true})
-    vim.api.nvim_set_keymap("n", "<S-TAB>", ":BufferLineCyclePrev<CR>", {noremap=true})
+    -- vim.api.nvim_set_keymap("n", "<TAB>", ":BufferLineCycleNext<CR>", {noremap=true})
+    -- vim.api.nvim_set_keymap("n", "<S-TAB>", ":BufferLineCyclePrev<CR>", {noremap=true})
     vim.o.termguicolors = true
     local colors = {
         terminal_color_0 =  "#2b303b",
