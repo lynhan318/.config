@@ -1,55 +1,5 @@
 let mapleader = "\<Space>"
 
-set expandtab
-set list
-filetype on
-filetype plugin on
-filetype plugin indent on
-set nocompatible
-set laststatus=2
-syntax on
-set encoding=UTF-8
-set mouse=a
-set scroll=15
-set termguicolors
-set history=1000
-set undolevels=1000
-
-"Search setting {{
-set incsearch
-set hlsearch
-"set updatetime=500
-"autocmd! CursorHold,CursorHoldI * let @/='\<'.expand('<cword>').'\>'
-
-"}}
-set splitbelow
-set splitright
-set number
-set relativenumber
-set ignorecase
-set smartcase
-set smartindent
-set autoindent
-set cursorline
-
-set tabstop=4
-set softtabstop=0
-set shiftwidth=4
-set lazyredraw
-set nobackup
-set noswapfile
-set nowrap
-set visualbell
-set noshowmode "hide mod insert,normal,...
-set noerrorbells
-
-"augroup CursorLine
-    "au!
-    "au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-    "au WinLeave * setlocal nocursorline
-"augroup END
-"hi CursorLine ctermbg=235
-
 "imap
 inoremap <silent> <c-l> <Right>
 inoremap <silent><expr><Tab> pumvisible() ? "\<C-N>" : "\<Tab>"

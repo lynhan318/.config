@@ -39,6 +39,8 @@ smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j
 "fzf{{
 nmap <silent><leader>p :Files<CR>
 nmap <silent><leader>l :Rg<CR>
+nmap <silent><leader>b :Buffers<CR>
+nmap <silent><leader>w :Windows<CR>
 "}}
 "prettier{{
 let g:prettier#quickfix_enabled = 0
@@ -62,33 +64,10 @@ let g:rustfmt_autosave = 1
 "}}
 
 " Tagbar{{
-nmap <F8> :TagbarToggle<CR>
-let g:tagbar_ctags_bin="/usr/local/bin/ctags"
-let g:tagbar_type_typescript = {
-    \ 'ctagstype': 'typescript',
-    \ 'kinds': [
-      \ 'c:class',
-      \ 'n:namespace',
-      \ 'f:function',
-      \ 'G:generator',
-      \ 'v:variable',
-      \ 'm:method',
-      \ 'p:property',
-      \ 'i:interface',
-      \ 'g:enum',
-      \ 't:type',
-      \ 'a:alias',
-    \ ],
-    \'sro': '.',
-      \ 'kind2scope' : {
-      \ 'c' : 'class',
-      \ 'n' : 'namespace',
-      \ 'i' : 'interface',
-      \ 'f' : 'function',
-      \ 'G' : 'generator',
-      \ 'm' : 'method',
-      \ 'p' : 'property',
-      \},
-\ }
+nmap <silent>T :TagbarToggle<CR>
+" let g:tagbar_ctags_bin="/usr/local/bin/ctags"
 "}}
 
+" sensible vim{{
+
+"}}

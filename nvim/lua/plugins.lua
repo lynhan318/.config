@@ -31,6 +31,7 @@ return require('packer').startup(
     use {'norcalli/nvim-colorizer.lua', config = require'plugins.nvim-colorizer'}
 
     -- Comment
+    use {'JoosepAlviste/nvim-ts-context-commentstring'}
     use {'tpope/vim-commentary'}
 
     -- Git
@@ -54,7 +55,7 @@ return require('packer').startup(
 
 
     -- Lightline
-    use {'itchyny/lightline.vim'}
+    use {'famiu/feline.nvim', config = require'plugins.statusline'}
 
     -- Surround
     use {'tpope/vim-surround'}
@@ -85,7 +86,8 @@ return require('packer').startup(
     use {'psliwka/vim-smoothie'}
 
     -- Theme
-    use {'chriskempson/base16-vim', config = require('plugins.theme')}
+    use {'chriskempson/base16-vim', config = require'plugins.theme'}
+
     use {'rust-lang/rust.vim'}
 
     -- Defx 
@@ -116,5 +118,11 @@ return require('packer').startup(
     -- use {'vim-airline/vim-airline-themes'};
     use {'prettier/vim-prettier'}
     use {'ray-x/lsp_signature.nvim'}
+
+    -- indent line
+    -- use {
+    --         'lukas-reineke/indent-blankline.nvim',
+    --         branch='lua'
+    --     }
   end
 )

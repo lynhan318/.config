@@ -14,7 +14,7 @@ return function()
         "lua"
     },
     autotag = {
-      enable = true,
+      enable = true
     },
     indent = {
       enable = true
@@ -22,6 +22,9 @@ return function()
     highlight = {
       enable = true,
       use_languagetree = true
+    },
+    context_commentstring = {
+      enable = true,
     },
     playground = {
       enable = true,
