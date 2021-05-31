@@ -1,21 +1,16 @@
 return function()
     local colors = {
-        bg = "NONE",
-        -- bg = "#2E3440",
-        fg = "#81A1C1",
-        line_bg = "NONE",
-        lbg = "#3B4252",
-        fg_green = "#8FBCBB",
-        yellow = "#EBCB8B",
-        cyan = "#A3BE8C",
-        darkblue = "#81A1C1",
-        green = "#8FBCBB",
-        orange = "#D08770",
-        purple = "#B48EAD",
-        magenta = "#BF616A",
-        gray = "#616E88",
-        blue = "#5E81AC",
-        red = "#BF616A"
+        bg = '#2c323c',
+        fg = none,
+        yellow = '#e5c07b',
+        cyan = '#8abeb7',
+        darkblue = '#528bff',
+        green = '#98c379',
+        orange = '#d19a66',
+        violet = '#b294bb',
+        magenta = '#ff80ff',
+        blue = '#61afef';
+        red = '#e88388';
     }
 
     local function reverse(tbl)
