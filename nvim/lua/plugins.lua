@@ -86,7 +86,13 @@ return require('packer').startup(
     use {'psliwka/vim-smoothie'}
 
     -- Theme
-    use {'chriskempson/base16-vim', config = require'plugins.theme'}
+    use {
+            'MordechaiHadad/nvim-papadark', 
+            requires = {'rktjmp/lush.nvim'},
+            config = require'plugins.theme'
+        }
+    -- use {'chriskempson/base16-vim', config = require'plugins.theme'}
+    -- use {'sainnhe/sonokai', config = require'plugins.theme'}
 
     use {'rust-lang/rust.vim'}
 
