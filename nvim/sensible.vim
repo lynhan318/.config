@@ -25,7 +25,6 @@ syntax on
 set encoding=UTF-8
 set mouse=a
 set scroll=15
-set termguicolors
 set history=1000
 set undolevels=1000
 
@@ -65,6 +64,12 @@ set nrformats-=octal
 if !has('nvim') && &ttimeoutlen == -1
   set ttimeout
   set ttimeoutlen=100
+endif
+
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
 endif
 
 set incsearch
