@@ -49,20 +49,7 @@ return function()-- TODO figure out why this don't work
         "LspDiagnosticsSignInformation",
         {texthl = "LspDiagnosticsSignInformation", text = "", numhl = "WhiteSign"}
     )
-    lsp_status.config {
-      kind_labels = kind_symbols,
-      select_symbol = function(cursor_pos, symbol)
-        if symbol.valueRange then
-          local value_range = {
-            ['start'] = {character = 0, line = vim.fn.byte2line(symbol.valueRange[1])},
-            ['end'] = {character = 0, line = vim.fn.byte2line(symbol.valueRange[2])}
-          }
 
-          return require('lsp-status/util').in_range(cursor_pos, value_range)
-        end
-      end,
-      current_function = false
-    }
     -- Setup plugins
     lsp_status.register_progress()
     saga.init_lsp_saga { use_saga_diagnostic_sign = false }
@@ -110,37 +97,39 @@ return function()-- TODO figure out why this don't work
           })
     end
 
+    lsp_status.config {
+      kind_labels = kind_symbols,
+      select_symbol = function(cursor_pos, symbol)
+        if symbol.valueRange then
+          local value_range = {
+            ['start'] = {character = 0, line = vim.fn.byte2line(symbol.valueRange[1])},
+            ['end'] = {character = 0, line = vim.fn.byte2line(symbol.valueRange[2])}
+          }
+
+          return require('lsp-status/util').in_range(cursor_pos, value_range)
+        end
+      end,
+      current_function = false
+    }
     local function lspStatusConfig(client)
         lsp_status.on_attach(client)
-        lsp_status.config {
-          kind_labels = kind_symbols,
-          select_symbol = function(cursor_pos, symbol)
-            if symbol.valueRange then
-              local value_range = {
-                ['start'] = {character = 0, line = vim.fn.byte2line(symbol.valueRange[1])},
-                ['end'] = {character = 0, line = vim.fn.byte2line(symbol.valueRange[2])}
-              }
-
-              return require('lsp-status/util').in_range(cursor_pos, value_range)
-            end
-          end,
-          current_function = false
-        }
     end
 
     local function lspSetup()
         vim.cmd("nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>")
-        vim.cmd("nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>")
         vim.cmd("nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>")
         vim.cmd("nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>")
         vim.cmd("nnoremap <silent> rn <cmd>lua vim.lsp.buf.implementation()<CR>")
         vim.cmd("nnoremap <silent> ca :Lspsaga code_action<CR>")
         vim.cmd("nnoremap <silent> rn :Lspsaga rename<CR>")
         vim.cmd("nnoremap <silent> K :Lspsaga hover_doc<CR>")
+        vim.cmd("nnoremap <silent> gD :Lspsaga preview_definition()<CR>")
         vim.cmd('nnoremap <silent> gS <cmd>lua require("lspsaga.signaturehelp").signature_help()<CR>')
+        -- vim.cmd("nnoremap <silent> gS :Lspsaga show_cursor_diagnostics<CR>")
         vim.cmd("nnoremap <silent> g[ :Lspsaga diagnostic_jump_prev<CR>")
         vim.cmd("nnoremap <silent> g] :Lspsaga diagnostic_jump_next<CR>")
-
+        -- vim.cmd("nnoremap <silent><leader>o :Lspsaga open_floaterm<CR>")
+        -- vim.cmd("tnoremap <silent><C-\><C-n> :Lspsaga close_floaterm<CR>")
         vim.cmd('command! -nargs=0 LspVirtualTextToggle lua require("lsp/virtual_text").toggle()')
 
 
