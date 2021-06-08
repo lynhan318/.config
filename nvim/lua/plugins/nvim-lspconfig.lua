@@ -51,8 +51,8 @@ return function()-- TODO figure out why this don't work
     )
 
     -- Setup plugins
-    lsp_status.register_progress()
-    saga.init_lsp_saga { use_saga_diagnostic_sign = false }
+    -- lsp_status.register_progress()
+    saga.init_lsp_saga { use_saga_diagnostic_sign = true }
     trouble.setup()
 
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -81,37 +81,24 @@ return function()-- TODO figure out why this don't work
     end
 
     local function lspSignatureHelp()
-          require "lsp_signature".on_attach({
-              bind = true, -- This is mandatory, otherwise border config won't get registered.
-                           -- If you want to hook lspsaga or other signature handler, pls set to false
-              doc_lines = 10, -- only show one line of comment set to 0 if you do not want API comments be shown
-
-              hint_enable = true, -- virtual hint enable
-              hint_prefix = "襁 ",  -- Panda for parameter
-              hint_scheme = "String",
-
-              handler_opts = {
-                border = "none"   -- double, single, shadow, none
-              },
-              decorator = {"`", "`"}  -- or decorator = {"***", "***"}  decorator = {"**", "**"} see markdown help
-          })
+          require "lsp_signature".on_attach()
     end
 
-    lsp_status.config {
-      kind_labels = kind_symbols,
-      select_symbol = function(cursor_pos, symbol)
-        if symbol.valueRange then
-          local value_range = {
-            ['start'] = {character = 0, line = vim.fn.byte2line(symbol.valueRange[1])},
-            ['end'] = {character = 0, line = vim.fn.byte2line(symbol.valueRange[2])}
-          }
-
-          return require('lsp-status/util').in_range(cursor_pos, value_range)
-        end
-      end,
-      current_function = false
-    }
     local function lspStatusConfig(client)
+        lsp_status.config {
+          kind_labels = kind_symbols,
+          select_symbol = function(cursor_pos, symbol)
+            if symbol.valueRange then
+              local value_range = {
+                ['start'] = {character = 0, line = vim.fn.byte2line(symbol.valueRange[1])},
+                ['end'] = {character = 0, line = vim.fn.byte2line(symbol.valueRange[2])}
+              }
+
+              return require('lsp-status/util').in_range(cursor_pos, value_range)
+            end
+          end,
+          current_function = false
+        }
         lsp_status.on_attach(client)
     end
 
@@ -136,9 +123,9 @@ return function()-- TODO figure out why this don't work
     end
 
     local function commonAttach(client, bufnr)
-        documentHighlight(client, bufnr)
-        lspStatusConfig(client)
-        lspSignatureHelp()
+        -- documentHighlight(client, bufnr)
+        -- lspStatusConfig(client)
+        -- lspSignatureHelp()
         lspSetup()
     end
 
@@ -161,7 +148,8 @@ return function()-- TODO figure out why this don't work
     for server, config in pairs(servers) do
       if type(config) == 'function' then config = config() end
       config.on_attach = commonAttach
-      config.capabilities = vim.tbl_deep_extend('keep', config.capabilities or {},lsp_status.capabilities, snippet_capabilities)
+      -- config.capabilities = vim.tbl_deep_extend('keep', config.capabilities or {},lsp_status.capabilities, snippet_capabilities)
+      config.capabilities = vim.tbl_deep_extend('keep', config.capabilities or {}, snippet_capabilities)
       lspconfig[server].setup(config)
     end
 end

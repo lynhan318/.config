@@ -71,76 +71,36 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: SimpleFullscreen
+  startup_mode: Windowed
 
   # Colors (base16)
 colors:
-  # Default colors
   primary:
     background: "0x2e3440"
-    foreground: "0xc0c5ce"
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
+    foreground: "0xe5e9f0"
   cursor:
     text: "0x2b303b"
     cursor: "0xc0c5ce"
-
-  # Normal colors
   normal:
-    black: "0x2b303b"
-    red: "0xbf616a"
-    green: "0xa3be8c"
-    yellow: "0xebcb8b"
-    blue: "0x8fa1b3"
-    magenta: "0xb48ead"
-    cyan: "0x96b5b4"
-    white: "0xc0c5ce"
+    black: "0x7f8c8d"
+    red: "0xfb617e"
+    green: "0x9ed06c"
+    yellow: "0xedc763"
+    blue: "0x6dcae8"
+    magenta: "0xbb97ee"
+    cyan: "0xf89860"
+    white: "0xe1e3e4"
 
-  # Bright colors
   bright:
-    black: "0x65737e"
-    red: "0xd08770"
-    green: "0x343d46"
-    yellow: "0x4f5b66"
-    blue: "0xa7adba"
-    magenta: "0xdfe1e8"
-    cyan: "0xab7967"
-    white: "0xeff1f5"
+    black: "0x7f8c8d"
+    red: "0xfb617e"
+    green: "0x9ed06c"
+    yellow: "0xedc763"
+    blue: "0x6dcae8"
+    magenta: "0xbb97ee"
+    cyan: "0xf89860"
+    white: "0xe1e3e4"
 
-#   indexed_colors: []
-#   base16-material-ligher
-# colors:
-#   # Default colors
-#   primary:
-#     background: '0xfafafa'
-#     foreground: '0x80cbc4'
-
-#   # Colors the cursor will use if `custom_cursor_colors` is true
-#   cursor:
-#     text: '0xfafafa'
-#     cursor: '0x80cbc4'
-
-#   # Normal colors
-#   normal:
-#     black:   '0xfafafa'
-#     red:     '0xff5370'
-#     green:   '0x91b859'
-#     yellow:  '0xffb62c'
-#     blue:    '0x6182b8'
-#     magenta: '0x7c4dff'
-#     cyan:    '0x39adb5'
-#     white:   '0x80cbc4'
-
-#   # Bright colors
-#   bright:
-#     black:   '0xccd7da'
-#     red:     '0xf76d47'
-#     green:   '0xe7eaec'
-#     yellow:  '0xcceae7'
-#     blue:    '0x8796b0'
-#     magenta: '0x80cbc4'
-#     cyan:    '0xe53935'
-#     white:   '0xffffff'
 
 draw_bold_text_with_bright_colors: false
 # draw_bold_text_with_bright_colors: false

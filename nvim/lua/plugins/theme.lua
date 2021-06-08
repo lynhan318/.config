@@ -1,11 +1,13 @@
 return function()
     local cmd = vim.cmd
-    vim.cmd 'colorscheme papadark'
+    vim.cmd('syntax on')
+    vim.cmd('set termguicolors')
+    -- vim.cmd('colorscheme papadark')
     -- sonokai
-    -- vim.g.sonokai_style = 'andromeda'
-    -- vim.g.sonokai_enable_italic = 1
-    -- vim.g.sonokai_disable_italic_comment = 1
-    -- cmd 'colorscheme sonokai'
+    vim.g.sonokai_style = 'andromeda'
+    vim.g.sonokai_enable_italic = 1
+    vim.g.sonokai_disable_italic_comment = 1
+    cmd 'colorscheme sonokai'
     -- base16-color
     -- cmd('colorscheme base16-ocean')
     -- cmd('hi! Normal ctermbg=NONE guibg=NONE')

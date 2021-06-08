@@ -74,8 +74,10 @@ return require('packer').startup(
     }
 
     -- Barbar, bufferline
-    use {"romgrk/barbar.nvim", requires = "kyazdani42/nvim-web-devicons"}
-
+    use {
+            "romgrk/barbar.nvim", 
+            requires = "kyazdani42/nvim-web-devicons",
+        }
     -- Snippets
     use {"hrsh7th/vim-vsnip", requires = "hrsh7th/vim-vsnip-integ", config = require"plugins.vim-vsnip"}
 
@@ -86,13 +88,21 @@ return require('packer').startup(
     use {'psliwka/vim-smoothie'}
 
     -- Theme
+    -- use {
+    --         'MordechaiHadad/nvim-papadark', 
+    --         requires = {'rktjmp/lush.nvim'},
+    --         config = require'plugins.theme'
+    --     }
+    -- use {'chriskempson/base16-vim', config = require'plugins.theme'}
     use {
-            'MordechaiHadad/nvim-papadark', 
-            requires = {'rktjmp/lush.nvim'},
+            'sainnhe/sonokai',
             config = require'plugins.theme'
         }
-    -- use {'chriskempson/base16-vim', config = require'plugins.theme'}
-    -- use {'sainnhe/sonokai', config = require'plugins.theme'}
+
+    -- use {
+    --         "rktjmp/lush.nvim", 
+    --         config = require'plugins.lush'
+    --     }
 
     use {'rust-lang/rust.vim'}
 

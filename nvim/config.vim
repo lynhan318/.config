@@ -1,5 +1,5 @@
 function! ClipboardYank()
-    call system('pbcopy',@@)
+    call system('pbcopy',@@) 
 endfunction
 function! ClipboardPaste() 
   let @@=system('pbpaste')
@@ -68,6 +68,11 @@ nmap <silent>T :TagbarToggle<CR>
 " let g:tagbar_ctags_bin="/usr/local/bin/ctags"
 "}}
 
-" sensible vim{{
-
+" onedark vim{{
+let bufferline = get(g:, 'bufferline', {})
+let bufferline.animation = v:true
+let bufferline.icon_separator_active = ''
+let bufferline.icon_separator_inactive = ''
+let bufferline.icon_close_tab = ''
+let bufferline.icon_close_tab_modified = '●'
 "}}
