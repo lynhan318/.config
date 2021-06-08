@@ -73,16 +73,16 @@ window:
   #   - SimpleFullscreen
   startup_mode: Windowed
 
-  # Colors (base16)
 colors:
-  primary:
-    background: "0x2e3440"
-    foreground: "0xe5e9f0"
   cursor:
     text: "0x2b303b"
     cursor: "0xc0c5ce"
+  primary:
+    background: "0x2b2d3a"
+    foreground: "0xe1e3e4"
+
   normal:
-    black: "0x7f8c8d"
+    black: "0x95a5a6"
     red: "0xfb617e"
     green: "0x9ed06c"
     yellow: "0xedc763"
@@ -92,7 +92,7 @@ colors:
     white: "0xe1e3e4"
 
   bright:
-    black: "0x7f8c8d"
+    black: "0x95a5a6"
     red: "0xfb617e"
     green: "0x9ed06c"
     yellow: "0xedc763"
@@ -100,7 +100,6 @@ colors:
     magenta: "0xbb97ee"
     cyan: "0xf89860"
     white: "0xe1e3e4"
-
 
 draw_bold_text_with_bright_colors: false
 # draw_bold_text_with_bright_colors: false
