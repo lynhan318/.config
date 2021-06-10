@@ -42,10 +42,7 @@ nmap <silent><leader>l :Rg<CR>
 nmap <silent><leader>b :Buffers<CR>
 nmap <silent><leader>w :Windows<CR>
 "}}
-"prettier{{
-let g:prettier#quickfix_enabled = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.scss,*.json,*.md,*.vue,*.yaml,*.html,*.tcss PrettierAsync
-"}}
+
 "rust {{
 let g:rustfmt_autosave = 1
 "}}

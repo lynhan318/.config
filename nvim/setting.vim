@@ -1,4 +1,51 @@
 let mapleader = "\<Space>"
+syntax enable
+filetype plugin indent on
+set expandtab
+set list
+set nocompatible
+syntax on
+set encoding=UTF-8
+set mouse=a
+set scroll=15
+set history=1000
+set undolevels=1000
+set hlsearch
+set splitbelow
+set splitright
+set number
+set relativenumber
+set ignorecase
+set smartcase
+set smartindent
+set cursorline
+set incsearch
+set tabstop=4
+set softtabstop=0
+set shiftwidth=4
+set lazyredraw
+set nobackup
+set noswapfile
+set nowrap
+set visualbell
+set noshowmode "hide mod insert,normal,...
+set noerrorbells
+set autoindent
+set backspace=indent,eol,start
+set smarttab
+set noshowmode "hide mod insert,normal,...
+set wildmenu
+set expandtab
+set completeopt=menuone,noselect
+set shortmess+=c
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+
+
 
 "imap
 inoremap <silent> <c-l> <Right>

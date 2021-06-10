@@ -19,15 +19,13 @@ return function()
     }
 
     local function reverse(tbl)
-        for i = 1, math.floor(#tbl/2) do
+        for i = 1, math.floor(#tbl / 2) do
             local j = #tbl - i + 1
             tbl[i], tbl[j] = tbl[j], tbl[i]
         end
     end
 
-    function get_tail(filename)
-        return vim.fn.fnamemodify(filename, ":t")
-    end
+    function get_tail(filename) return vim.fn.fnamemodify(filename, ":t") end
 
     function split_filename(filename)
         local nodes = {}
@@ -45,11 +43,7 @@ return function()
     end
 
     local function same_until(first, second)
-        for i = 1, #first do
-            if first[i] ~= second[i] then
-                return i
-            end
-        end
+        for i = 1, #first do if first[i] ~= second[i] then return i end end
         return 1
     end
 
@@ -58,23 +52,24 @@ return function()
 
         local others_reversed = vim.tbl_map(reverse_filename, other_filenames)
         local filename_reversed = reverse_filename(filename)
-        local same_until_map = vim.tbl_map(function(second) return same_until(filename_reversed, second) end, others_reversed)
+        local same_until_map = vim.tbl_map(function(second)
+            return same_until(filename_reversed, second)
+        end, others_reversed)
 
         local max = 0
-        for _, v in ipairs(same_until_map) do
-            if v > max then max = v end
-        end
-        for i = max, 1, -1 do
-            rv = rv .. filename_reversed[i]
-        end
+        for _, v in ipairs(same_until_map) do if v > max then max = v end end
+        for i = max, 1, -1 do rv = rv .. filename_reversed[i] end
 
         return rv
     end
 
     function get_current_ufn()
         local buffers = vim.fn.getbufinfo()
-        local listed = vim.tbl_filter(function(buffer) return buffer.listed == 1 end, buffers)
-        local names = vim.tbl_map(function(buffer) return buffer.name end, listed)
+        local listed = vim.tbl_filter(function(buffer)
+            return buffer.listed == 1
+        end, buffers)
+        local names = vim.tbl_map(function(buffer) return buffer.name end,
+                                  listed)
         local current_name = vim.fn.expand("%")
         return get_unique_filename(current_name, names)
     end
@@ -136,7 +131,9 @@ return function()
         local modified_str
 
         local icon = component.icon or
-            require'nvim-web-devicons'.get_icon(filename, extension, { default = true })
+                         require'nvim-web-devicons'.get_icon(filename,
+                                                             extension,
+                                                             {default = true})
 
         if filename == '' then filename = 'unnamed' end
 
