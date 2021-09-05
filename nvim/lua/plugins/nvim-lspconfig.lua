@@ -1,7 +1,7 @@
 return function() -- TODO figure out why this don't work
     local lsp_status = require('lsp-status')
     local protocol = require('vim.lsp.protocol')
-    local trouble = require('trouble')
+    -- local trouble = require('trouble')
     local lspconfig = require('lspconfig')
     local saga = require('lspsaga')
 
@@ -40,7 +40,7 @@ return function() -- TODO figure out why this don't work
     -- Setup plugins
     lsp_status.register_progress()
     saga.init_lsp_saga {use_saga_diagnostic_sign = false}
-    trouble.setup()
+    -- trouble.setup()
 
     vim.lsp.handlers["textDocument/publishDiagnostics"] =
         vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -65,9 +65,13 @@ return function() -- TODO figure out why this don't work
         end
     end
 
-    local function lspSignatureHelp() require"lsp_signature".on_attach() end
-
-    local function setupEfm() end
+    local function lspSignatureHelp()
+        require"lsp_signature".on_attach({
+            bind = true, -- This is mandatory, otherwise border config won't get registered.
+            doc_lines = 2,
+            handler_opts = {border = "single"}
+        })
+    end
 
     local function lspStatusConfig(client)
         lsp_status.config {
@@ -100,9 +104,10 @@ return function() -- TODO figure out why this don't work
         vim.cmd("nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>")
         vim.cmd("nnoremap <silent> rn <cmd>lua vim.lsp.buf.rename()<CR>")
         vim.cmd("nnoremap <silent> K :Lspsaga hover_doc<CR>")
-        vim.cmd("nnoremap <silent> gp :Lspsaga preview_definition()<CR>")
+        -- vim.cmd("nnoremap <silent> gp :Lspsaga preview_definition()<CR>")
         vim.cmd("nnoremap <silent> ca :Lspsaga code_action<CR>")
-        -- vim.cmd('nnoremap <silent> gS <cmd>lua require("lspsaga.signaturehelp").signature_help()<CR>')
+        vim.cmd('nnoremap <silent> gs :Lspsaga signature_help<CR>')
+        vim.cmd('nnoremap <silent> gh :Lspsaga lsp_finder<CR>')
         vim.cmd("nnoremap <silent> g[ :Lspsaga show_cursor_diagnostics<CR>")
         vim.cmd("nnoremap <silent> g] :Lspsaga diagnostic_jump_next<CR>")
         -- vim.cmd("nnoremap <silent> g] :Lspsaga diagnostic_jump_next<CR>")
@@ -115,16 +120,13 @@ return function() -- TODO figure out why this don't work
     local function commonAttach(client, bufnr)
         documentHighlight(client, bufnr)
         lspStatusConfig(client)
-        lspSignatureHelp()
+        -- lspSignatureHelp()
         lspSetup()
     end
 
     local servers = {
-        cssls = {
-            filetypes = {"css", "scss", "less", "sass"},
-            root_dir = lspconfig.util.root_pattern("package.json", ".git")
-        },
-        html = {},
+        cssls = {cmd = {'css-languageserver', '--stdio'}},
+        html = {cmd = {'html-languageserver', '--stdio'}},
         jsonls = {cmd = {'json-languageserver', '--stdio'}},
         rust_analyzer = {},
         tsserver = {},

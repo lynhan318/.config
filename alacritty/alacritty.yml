@@ -58,10 +58,18 @@ cursor:
 
 window:
   padding:
-    x: 0
-    y: 0
+    x: 8
+    y: 8
   dynamic_padding: false
-  decorations: full
+  # Window decorations
+  #
+  # Available values:
+  # - full: borders and title bar
+  # - none: neither borders nor title bar
+  # - transparent: title bar, transparent background and title bar buttons
+  # - buttonless: title bar, transparent background, but no title bar buttons
+  decorations: buttonless
+
   # Startup Mode (changes require restart)
   #
   # Values for `startup_mode`:

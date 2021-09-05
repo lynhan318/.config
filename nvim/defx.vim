@@ -19,13 +19,13 @@ endfunction
 
 function! s:setup_defx() abort
   silent! call defx#custom#option('_', {
-      \ 'winwidth': 40,
+      \ 'winwidth': 50,
       \ 'split': 'vertical',
       \ 'direction': 'topleft',
       \ 'show_ignored_files': 0,
       \ 'buffer_name': 'defxplorer',
       \ 'toggle': 1,
-      \ 'columns': 'git:indent:icon:icons:filename',
+      \ 'columns': 'git:indent:icon:space:icons:space:filename',
       \ 'resume': 1,
       \ 'floating_preview': 1,
       \ })
@@ -38,7 +38,15 @@ function! s:setup_defx() abort
       \ 'indent': '  ',
       \ })
 
-  silent! call defx#custom#column('git', 'indicators', {
+ silent! call defx#custom#column('space', {
+      \ 'indent': ' ',
+      \ })
+
+ silent! call defx#custom#column('filename', {
+      \ 'max_width': 120,
+      \ 'min_width': 60,
+      \ })
+ silent! call defx#custom#column('git', 'indicators', {
       \ 'Modified'  : '✹',
       \ 'Staged'    : '✚',
       \ 'Untracked' : '✭',

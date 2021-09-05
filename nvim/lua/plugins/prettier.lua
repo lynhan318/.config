@@ -23,6 +23,10 @@ return function()
             typescriptreact = {jsFormat},
             typescript = {jsFormat},
             javascript = {jsFormat},
+            css = {jsFormat},
+            json = {jsFormat},
+            scss = {jsFormat},
+            yaml = {jsFormat},
             rust = {
                 -- Rustfmt
                 function()
