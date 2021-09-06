@@ -4,22 +4,17 @@ spacebar -m config position                    top
 spacebar -m config display                     all
 spacebar -m config height                      26
 spacebar -m config title                       on
-spacebar -m config spaces                      on
 spacebar -m config clock                       on
-spacebar -m config power                       on
+spacebar -m config spaces                      off
+spacebar -m config power                       off
 spacebar -m config padding_left                20
 spacebar -m config padding_right               20
 spacebar -m config spacing_left                25
 spacebar -m config spacing_right               15
 spacebar -m config text_font                   "Menlo:Regular:13.0"
 spacebar -m config background_color            0xffFF
-spacebar -m config foreground_color            0xffFFFFFF
-spacebar -m config power_icon_color            0xffFFFFFF
-spacebar -m config battery_icon_color          0xffFFFFFF
-spacebar -m config dnd_icon_color              0xffa8a8a8
-spacebar -m config clock_icon_color            0xffFFFFFF
-spacebar -m config power_icon_strip             
-spacebar -m config space_icon                  •
+spacebar -m config foreground_color            0xffffffff
+spacebar -m config clock_icon_color            0xffffffff
 spacebar -m config space_icon_color            0xffffab91
 spacebar -m config space_icon_color_secondary  0xff78c4d4
 spacebar -m config space_icon_color_tertiary   0xfffff9b0
