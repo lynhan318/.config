@@ -19,7 +19,7 @@ endfunction
 
 function! s:setup_defx() abort
   silent! call defx#custom#option('_', {
-      \ 'winwidth': 50,
+      \ 'winwidth': 40,
       \ 'split': 'vertical',
       \ 'direction': 'topleft',
       \ 'show_ignored_files': 0,
@@ -44,7 +44,7 @@ function! s:setup_defx() abort
 
  silent! call defx#custom#column('filename', {
       \ 'max_width': 120,
-      \ 'min_width': 60,
+      \ 'min_width': 40,
       \ })
  silent! call defx#custom#column('git', 'indicators', {
       \ 'Modified'  : '✹',

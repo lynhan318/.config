@@ -18,7 +18,7 @@ set relativenumber
 set ignorecase
 set smartcase
 set smartindent
-set cursorline
+" set cursorline
 set incsearch
 set tabstop=4
 set softtabstop=0

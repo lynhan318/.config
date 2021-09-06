@@ -1,7 +1,7 @@
 return function()
     local formatter = require('formatter')
 
-    local function jsFormat()
+    local function prettier()
         return {
             exe = "prettier",
             args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
@@ -12,21 +12,22 @@ return function()
     vim.api.nvim_exec([[
         augroup FormatAutogroup
           autocmd!
-          autocmd BufWritePost *.js,*.ts,*.rs,*.lua,*.jsx,*.tsx,*.md,*.mdx,*.yml,*.json,*.css,*.scss FormatWrite
+          autocmd BufWritePost *.js,*.mjs,*.ts,*.rs,*.lua,*.jsx,*.tsx,*.md,*.mdx,*.yml,*.json,*.css,*.scss FormatWrite
         augroup END
     ]], true)
 
     formatter.setup({
         logging = false,
         filetype = {
-            javascriptreact = {jsFormat},
-            typescriptreact = {jsFormat},
-            typescript = {jsFormat},
-            javascript = {jsFormat},
-            css = {jsFormat},
-            json = {jsFormat},
-            scss = {jsFormat},
-            yaml = {jsFormat},
+            javascriptreact = {prettier},
+            typescriptreact = {prettier},
+            typescript = {prettier},
+            javascript = {prettier},
+            css = {prettier},
+            json = {prettier},
+            scss = {prettier},
+            yaml = {prettier},
+            markdown = {prettier},
             rust = {
                 -- Rustfmt
                 function()
