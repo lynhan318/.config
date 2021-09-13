@@ -48,7 +48,7 @@ return require('packer').startup(function()
     use {'glepnir/lspsaga.nvim'}
     use {'kabouzeid/nvim-lspinstall'}
     use {'nvim-lua/lsp_extensions.nvim'}
-    use {'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+    -- use {'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons'}
     use {
         'ojroques/nvim-lspfuzzy',
         config = require 'plugins.fzf',
@@ -58,7 +58,7 @@ return require('packer').startup(function()
     }
 
     -- Lightline
-    use {'famiu/feline.nvim', config = require 'plugins.statusline'}
+    -- use {'famiu/feline.nvim', config = require 'plugins.statusline'}
 
     -- Surround
     use {'tpope/vim-surround'}
@@ -81,10 +81,16 @@ return require('packer').startup(function()
     use {"romgrk/barbar.nvim", requires = "kyazdani42/nvim-web-devicons"}
     -- Snippets
     use {
-        "hrsh7th/vim-vsnip",
-        requires = "hrsh7th/vim-vsnip-integ",
+        'SirVer/ultisnips',
+        requires = "honza/vim-snippets",
         config = require "plugins.vim-vsnip"
     }
+    use {'honza/vim-snippets'}
+    -- use {
+    --     "hrsh7th/vim-vsnip",
+    --     requires = "hrsh7th/vim-vsnip-integ",
+    --     config = require "plugins.vim-vsnip"
+    -- }
 
     -- Completion
     use {'hrsh7th/nvim-compe', config = require 'plugins.nvim-compe'}

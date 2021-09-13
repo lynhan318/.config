@@ -67,7 +67,6 @@ noremap <silent> <c-k> :wincmd k<CR>
 noremap <silent> <c-j> :wincmd j<CR>
 noremap <silent> <c-h> :wincmd h<CR>
 noremap <silent> <c-l> :wincmd l<CR>
-noremap <silent> <leader>c :BufferClose<CR>
 
 "escape highlight search
 "copy/pase
@@ -76,7 +75,7 @@ vnoremap > >gv
 vnoremap <silent> y y:call ClipboardYank()<cr>
 vnoremap <silent> d d:call ClipboardYank()<cr>
 nnoremap <silent> p :call ClipboardPaste()<cr>p
-nnoremap <nowait><c-w> :bd<cr>
+nnoremap <nowait><c-w> :BD<cr>
 nnoremap <c-s> :w!<cr>
 nnoremap <nowait><c-w><c-k> :bufdo bd<cr>
 nnoremap <leader>a ggVG<cr>

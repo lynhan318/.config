@@ -125,8 +125,19 @@ return function() -- TODO figure out why this don't work
     end
 
     local servers = {
-        cssls = {cmd = {'css-languageserver', '--stdio'}},
-        html = {cmd = {'html-languageserver', '--stdio'}},
+        cssls = {
+            cmd = {'css-languageserver', '--stdio'}
+            -- filetypes = {"css", "scss"}
+
+        },
+        html = {
+            cmd = {'html-languageserver', '--stdio'}
+            -- filetypes = {"html"},
+            -- init_options = {
+            --     configurationSection = {'html', 'css', 'javascript'},
+            --     embeddedLanguages = {'css', 'javascript'}
+            -- }
+        },
         jsonls = {cmd = {'json-languageserver', '--stdio'}},
         rust_analyzer = {},
         tsserver = {},

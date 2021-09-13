@@ -5,7 +5,7 @@
   },
   "React Component Without PropTypes": {
     "prefix": "crc",
-    "body": "import styles from './styles.module.scss'\nimport React from 'react';\n\ntype ${TM_FILENAME_BASE}Props={}\n\nconst ${1:${TM_FILENAME_BASE}}:React.FC<${TM_FILENAME_BASE}Props> = (props) => {\n\treturn (\n\t\t<>\n\t\t\t\n\t\t</>\n\t);\n};\n\nexport default ${1:${TM_FILENAME_BASE}};",
+    "body": [],
     "description": "Create React Component"
   },
   "useEffect": {
@@ -13,18 +13,13 @@
     "body": "useEffect(() => {\n$0\n}, [$1])",
     "description": "Adds use effect"
   },
-  "useEffectUnMount": {
-    "prefix": "rueu",
-    "body": "useEffect(() => {\n$0 return () => {\n$0\n\t}\n}, [$1])",
-    "description": "Adds use effect"
-  },
   "useState": {
-    "prefix": "rus",
+    "prefix": "ust",
     "body": "const [$1, set${1/(.*)/${1:/capitalize}/}] = useState($2);",
     "description": "Adds use state"
   },
   "useRef": {
-    "prefix": "rur",
+    "prefix": "ure",
     "body": "const ${1:ref} = useRef($2);",
     "description": "Adds use ref"
   },
