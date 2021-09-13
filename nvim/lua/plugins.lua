@@ -85,7 +85,6 @@ return require('packer').startup(function()
         requires = "honza/vim-snippets",
         config = require "plugins.vim-vsnip"
     }
-    use {'honza/vim-snippets'}
     -- use {
     --     "hrsh7th/vim-vsnip",
     --     requires = "hrsh7th/vim-vsnip-integ",

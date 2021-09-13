@@ -120,7 +120,7 @@ return function() -- TODO figure out why this don't work
     local function commonAttach(client, bufnr)
         documentHighlight(client, bufnr)
         lspStatusConfig(client)
-        -- lspSignatureHelp()
+        lspSignatureHelp()
         lspSetup()
     end
 
