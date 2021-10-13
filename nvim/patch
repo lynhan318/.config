@@ -1,0 +1,15 @@
+   //barbar.vim
+   
+   let fg_target = 'red'
+
+   let fg_current  = '#ffffff'
+   let fg_visible  = '#efefef'
+   let fg_inactive = s:fg(['Normal'], '#888888')
+
+   let fg_modified = s:fg(['WarningMsg'], '#E5AB0E')
+   let fg_special  = s:fg(['Special'], '#599eff')
+   let fg_subtle   = s:fg(['NonText', 'Comment'], '#555555')
+
+   let bg_current  = '#718093'
+   let bg_visible  = s:bg(['Normal', 'Normal'], 'none')
+   let bg_inactive = s:bg(['TabLineFill', 'StatusLine'], 'none')
