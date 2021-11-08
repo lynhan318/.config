@@ -8,7 +8,7 @@ font:
   italic:
     family: "FuraMono Nerd Font"
     style: Italic
-  size: 14.0
+  size: 16.0
   offset:
     x: 0
     y: 1
@@ -18,7 +18,7 @@ font:
     y: 0
   use_thin_strokes: true
 
-background_opacity: 1.0
+background_opacity: 0.9
 
 # When true, bold text is drawn using the bright variant of colors.
 
@@ -58,10 +58,18 @@ cursor:
 
 window:
   padding:
-    x: 0
-    y: 0
+    x: 8
+    y: 8
   dynamic_padding: false
-  decorations: full
+  # Window decorations
+  #
+  # Available values:
+  # - full: borders and title bar
+  # - none: neither borders nor title bar
+  # - transparent: title bar, transparent background and title bar buttons
+  # - buttonless: title bar, transparent background, but no title bar buttons
+  decorations: buttonless
+
   # Startup Mode (changes require restart)
   #
   # Values for `startup_mode`:
@@ -73,43 +81,36 @@ window:
   #   - SimpleFullscreen
   startup_mode: Windowed
 
-  # Colors (base16)
 colors:
-  # Default colors
-  primary:
-    background: "0x2b303b"
-    foreground: "0xc0c5ce"
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
     text: "0x2b303b"
     cursor: "0xc0c5ce"
+  primary:
+    background: "0x2b2d3a"
+    foreground: "0xe1e3e4"
 
-  # Normal colors
   normal:
-    black: "0x2b303b"
-    red: "0xbf616a"
-    green: "0xa3be8c"
-    yellow: "0xebcb8b"
-    blue: "0x8fa1b3"
-    magenta: "0xb48ead"
-    cyan: "0x96b5b4"
-    white: "0xc0c5ce"
+    black: "0x95a5a6"
+    red: "0xfb617e"
+    green: "0x9ed06c"
+    yellow: "0xedc763"
+    blue: "0x6dcae8"
+    magenta: "0xbb97ee"
+    cyan: "0xf89860"
+    white: "0xe1e3e4"
 
-  # Bright colors
   bright:
-    black: "0x65737e"
-    red: "0xd08770"
-    green: "0x343d46"
-    yellow: "0x4f5b66"
-    blue: "0xa7adba"
-    magenta: "0xdfe1e8"
-    cyan: "0xab7967"
-    white: "0xeff1f5"
-
-  indexed_colors: []
+    black: "0x95a5a6"
+    red: "0xfb617e"
+    green: "0x9ed06c"
+    yellow: "0xedc763"
+    blue: "0x6dcae8"
+    magenta: "0xbb97ee"
+    cyan: "0xf89860"
+    white: "0xe1e3e4"
 
 draw_bold_text_with_bright_colors: false
+# draw_bold_text_with_bright_colors: false
 #shell:
 #  program: /usr/local/bin/tmux
 #  args:

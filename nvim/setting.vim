@@ -1,26 +1,16 @@
 let mapleader = "\<Space>"
-
+syntax enable
+filetype plugin indent on
 set expandtab
 set list
-filetype plugin on
-filetype plugin indent on
 set nocompatible
-
 syntax on
 set encoding=UTF-8
 set mouse=a
-set scroll=10
-
+set scroll=15
 set history=1000
 set undolevels=1000
-
-"Search setting {{
-set incsearch
 set hlsearch
-"set updatetime=500
-"autocmd! CursorHold,CursorHoldI * let @/='\<'.expand('<cword>').'\>'
-
-"}}
 set splitbelow
 set splitright
 set number
@@ -28,9 +18,8 @@ set relativenumber
 set ignorecase
 set smartcase
 set smartindent
-set autoindent
-set cursorline
-
+" set cursorline
+set incsearch
 set tabstop=4
 set softtabstop=0
 set shiftwidth=4
@@ -38,16 +27,25 @@ set lazyredraw
 set nobackup
 set noswapfile
 set nowrap
-
 set visualbell
+set noshowmode "hide mod insert,normal,...
 set noerrorbells
+set autoindent
+set backspace=indent,eol,start
+set smarttab
+set noshowmode "hide mod insert,normal,...
+set wildmenu
+set expandtab
+set completeopt=menuone,noselect
+set shortmess+=c
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
-"augroup CursorLine
-    "au!
-    "au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-    "au WinLeave * setlocal nocursorline
-"augroup END
-"hi CursorLine ctermbg=235
+
+
 
 "imap
 inoremap <silent> <c-l> <Right>
@@ -64,7 +62,6 @@ noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 noremap Y y$
 nmap <silent> ff <Plug>(easymotion-overwin-f2)
 nmap <silent> fl <Plug>(easymotion-overwin-line)
-nmap <leader>s <Plug>CtrlSFPrompt
 
 noremap <silent> <c-k> :wincmd k<CR>
 noremap <silent> <c-j> :wincmd j<CR>
@@ -78,12 +75,10 @@ vnoremap > >gv
 vnoremap <silent> y y:call ClipboardYank()<cr>
 vnoremap <silent> d d:call ClipboardYank()<cr>
 nnoremap <silent> p :call ClipboardPaste()<cr>p
-
+nnoremap <nowait><c-w> :BD<cr>
+nnoremap <c-s> :w!<cr>
+nnoremap <nowait><c-w><c-k> :bufdo bd<cr>
+nnoremap <leader>a ggVG<cr>
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-"ctrslf
-vmap <leader>sw <Plug>CtrlSFVwordPath
-"terminal mapping
-tnoremap <Esc> <C-\><C-n>
-"vim-styled syntax
-"autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-"autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
+autocmd BufNewFile,BufRead *.mdx set filetype=markdown.mdx
